@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Large media (use Google Photos / YouTube / Suno URLs instead)
+*.mp4
+*.mov
+*.avi
+
+# Sensitive
+*.env
+config.local.json

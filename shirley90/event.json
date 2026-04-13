@@ -1,0 +1,81 @@
+{
+  "event": {
+    "title": "Shirley Dixon Turns 90!",
+    "subtitle": "A very special afternoon tea",
+    "person": {
+      "name": "Shirley Dixon",
+      "firstName": "Shirley",
+      "age": 90,
+      "birthday": "1936-07-25"
+    },
+    "date": "2026-07-25",
+    "startTime": "12:00",
+    "endTime": "17:00",
+    "afternoonTeaStart": "14:00",
+    "afternoonTeaEnd": "16:00",
+    "rsvpDeadline": "2026-06-25",
+    "timezone": "Australia/Melbourne"
+  },
+
+  "venue": {
+    "name": "Karbeethong Lodge",
+    "address": "12 Schnapper Point Drive",
+    "suburb": "Mallacoota",
+    "state": "VIC",
+    "postcode": "3892",
+    "phone": "(03) 5158 0411",
+    "email": "admin@karbeethonglodge.com.au",
+    "website": "https://www.karbeethonglodge.com.au",
+    "description": "A beautiful historic guesthouse right on the water at Mallacoota",
+    "mapsUrl": "https://maps.google.com/?cid=6053129429632339692",
+    "accommodation": "Accommodation available at the Lodge. Contact Graeme and Jenny directly to book.",
+    "hosts": "Graeme and Jenny"
+  },
+
+  "organiser": {
+    "name": "Colin Dixon",
+    "email": "col@dixon.net.au",
+    "phone": "0419 415 000",
+    "photoEmail": "col@dixon.net.au",
+    "website": "https://dixon.au"
+  },
+
+  "drinks": {
+    "provided": ["Beer", "Red wine", "White wine", "Bubbles", "Tea", "Coffee"],
+    "policy": "BYO welcome. Venue is fully licensed."
+  },
+
+  "food": {
+    "policy": "Bring a plate if you'd like -- savoury, sweet, cheese and crackers, fruit, or anything you fancy. Plenty of food will be on hand, so no pressure at all."
+  },
+
+  "rsvpFormUrl": "",
+
+  "photos": {
+    "hero20": "https://lh3.googleusercontent.com/pw/AP1GczNJ_3U2U0nBDWw2rve_mAMyh3DQdglO7OWtX4LlCi5jfoicj4k-NGYBO4wC5TnmlRq-bhht22bMti4t00lQQ3o9Y0QjIWfKBX2RXTON4hVS-qNFgaoO=w800",
+    "hero89": "https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800",
+    "gallery2025": "https://photos.app.goo.gl/fWgqhn9kwSUJptKM9",
+    "galleryEmbed": ""
+  },
+
+  "video": {
+    "youtubeId": "",
+    "title": "Happy 90th Birthday Shirley!",
+    "description": "A birthday tribute video"
+  },
+
+  "song": {
+    "sunoUrl": "",
+    "title": "Shirley's Song",
+    "artist": "Colin Dixon"
+  },
+
+  "meta": {
+    "siteName": "Celebrate -- Shirley Dixon's 90th Birthday",
+    "siteUrl": "https://celebrate.oze.au/shirley90",
+    "description": "Join us to celebrate Shirley Dixon's 90th birthday -- Saturday 25 July 2026 at Karbeethong Lodge, Mallacoota",
+    "themeColor": "#3C3489",
+    "poweredBy": "celebrate.oze.au -- a Colin Dixon production",
+    "poweredByUrl": "https://celebrate.oze.au"
+  }
+}

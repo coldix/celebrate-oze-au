@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shirley Dixon Turns 90! | celebrate.oze.au</title>
+  <meta name="description" content="Join us to celebrate Shirley Dixon's 90th birthday -- Saturday 25 July 2026 at Karbeethong Lodge, Mallacoota">
+  <meta property="og:title" content="Shirley Dixon Turns 90!">
+  <meta property="og:description" content="A very special afternoon tea -- Saturday 25 July 2026, Karbeethong Lodge, Mallacoota">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800">
+  <meta name="theme-color" content="#3C3489">
+  <link rel="stylesheet" href="../../css/celebrate.css">
+  <style>
+    /* Page-specific overrides */
+    .venue-map-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--brand); text-decoration: none; font-size: 14px;
+      font-weight: 700; margin-top: 8px;
+    }
+    .venue-map-link:hover { text-decoration: underline; }
+    [data-theme="dark"] .venue-map-link { color: var(--brand-pale); }
+
+    .drinks-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .pill {
+      font-size: 13px; padding: 4px 14px; border-radius: 20px;
+      background: var(--brand-light); color: var(--brand); font-weight: 700;
+    }
+    [data-theme="dark"] .pill { background: rgba(60,52,137,0.4); color: #AFA9EC; }
+
+    .organiser-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .organiser-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--brand); display: flex; align-items: center;
+      justify-content: center; font-family: var(--font-display);
+      font-size: 20px; color: #EEEDFE; flex-shrink: 0;
+    }
+    .organiser-info { font-size: 14px; }
+    .organiser-info strong { display: block; font-size: 16px; color: var(--text); }
+    .organiser-info a { color: var(--brand); text-decoration: none; }
+    [data-theme="dark"] .organiser-info a { color: var(--brand-pale); }
+
+    /* Staggered fade-in on load */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.25s; }
+    .fade-in:nth-child(3) { animation-delay: 0.4s; }
+    .fade-in:nth-child(4) { animation-delay: 0.55s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="https://celebrate.oze.au" class="nav-brand">celebrate.oze.au</a>
+  <ul class="nav-links">
+    <li><a href="#event">Event</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#wishes">Wishes</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">☾ Dark</button></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow fade-in">years young</p>
+    <h1 class="hero-age fade-in" id="hero-age">90</h1>
+    <h2 class="hero-name fade-in" id="hero-name">Shirley Dixon</h2>
+
+    <div class="then-now fade-in">
+      <div class="then-now-frame">
+        <img id="photo20"
+          src="https://lh3.googleusercontent.com/pw/AP1GczNJ_3U2U0nBDWw2rve_mAMyh3DQdglO7OWtX4LlCi5jfoicj4k-NGYBO4wC5TnmlRq-bhht22bMti4t00lQQ3o9Y0QjIWfKBX2RXTON4hVS-qNFgaoO=w800"
+          alt="Shirley at 20" loading="lazy">
+        <p class="then-now-label">Shirley at 20</p>
+      </div>
+      <div class="then-now-frame">
+        <img id="photo89"
+          src="https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800"
+          alt="Shirley at 89" loading="lazy">
+        <p class="then-now-label">Shirley at 89</p>
+      </div>
+    </div>
+    <p style="font-family:var(--font-display);font-style:italic;font-size:14px;color:#7F77DD;margin-top:8px;">then and now</p>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-bar" id="countdown-bar">
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-days">--</span>
+      <span class="countdown-label">Days</span>
+    </div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-hours">--</span>
+      <span class="countdown-label">Hours</span>
+    </div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-minutes">--</span>
+      <span class="countdown-label">Minutes</span>
+    </div>
+    <div class="countdown-unit">
+      <span class="countdown-num" id="cd-seconds">--</span>
+      <span class="countdown-label">Seconds</span>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT DETAILS -->
+<section class="section" id="event">
+  <div class="container">
+    <h2 class="section-title">The Celebration</h2>
+
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="detail-icon">📅</div>
+        <div class="detail-label">Date</div>
+        <div class="detail-value" id="event-date">Saturday 25 July 2026</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">🕛</div>
+        <div class="detail-label">Time</div>
+        <div class="detail-value">Noon to 5pm<br><small style="color:var(--text-muted)">Afternoon tea 2 to 4pm</small></div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">📍</div>
+        <div class="detail-label">Venue</div>
+        <div class="detail-value">
+          <strong>Karbeethong Lodge</strong><br>
+          12 Schnapper Point Drive<br>
+          Mallacoota VIC 3892
+          <br>
+          <a href="https://maps.google.com/?cid=6053129429632339692" target="_blank" class="venue-map-link">
+            &#9658; Open in Maps
+          </a>
+        </div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">📞</div>
+        <div class="detail-label">Lodge Bookings</div>
+        <div class="detail-value">
+          Graeme &amp; Jenny<br>
+          <a href="tel:0351580411">(03) 5158 0411</a><br>
+          <a href="mailto:admin@karbeethonglodge.com.au">admin@karbeethonglodge.com.au</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>Bring a plate!</h3>
+      <p>Savoury, sweet, cheese and crackers, fruit -- whatever you fancy. Plenty of food will be on hand, so no pressure at all. Just come and celebrate!</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Drinks</h3>
+      <p>Beer, red, white and bubbles will be on hand all afternoon, plus tea and coffee throughout. BYO welcome -- the venue is fully licensed.</p>
+      <div class="drinks-pills">
+        <span class="pill">Beer</span>
+        <span class="pill">Red wine</span>
+        <span class="pill">White wine</span>
+        <span class="pill">Bubbles</span>
+        <span class="pill">Tea &amp; Coffee</span>
+        <span class="pill">BYO welcome</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>Staying over?</h3>
+      <p>Accommodation is available right at Karbeethong Lodge -- some guests are staying a few days or even a week. Contact Graeme and Jenny directly on (03) 5158 0411 to book your room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp-section" id="rsvp">
+  <h2>You are warmly invited</h2>
+  <p>Let us know you are coming -- and what you would like to bring!</p>
+  <a href="#" class="btn-rsvp" id="rsvp-btn">RSVP Here</a>
+  <p class="rsvp-deadline" id="rsvp-deadline">Please RSVP by 25 June 2026 -- but honestly, just turn up if you can!</p>
+</section>
+
+<!-- BIRTHDAY VIDEO -->
+<section class="section section-alt" id="video">
+  <div class="container">
+    <h2 class="section-title">Birthday Video</h2>
+    <div id="video-container">
+      <div class="placeholder-block">
+        The birthday video tribute will appear here closer to the day.
+        <br><br>
+        <strong>Want to be in it?</strong> Send your photos, videos or record a birthday message.<br>
+        Contact Colin: <a href="mailto:col@dixon.net.au" style="color:var(--brand)">col@dixon.net.au</a> or <a href="tel:0419415000" style="color:var(--brand)">0419 415 000</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIRTHDAY SONG -->
+<section class="section" id="song">
+  <div class="container">
+    <h2 class="section-title">Shirley's Song</h2>
+    <div class="audio-player" id="song-container">
+      <p style="font-family:var(--font-display);font-size:18px;margin-bottom:8px;">A special song for a special lady</p>
+      <p style="color:var(--text-muted);font-size:14px;">Original song coming soon -- composed just for Shirley's 90th!</p>
+      <div class="placeholder-block" style="margin-top:1rem;">
+        The birthday song will be playable here once it's ready.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <h2 class="section-title">Photo Gallery</h2>
+    <p style="margin-bottom:1.5rem;color:var(--text-muted);">A lifetime of memories -- photos spanning nine wonderful decades.</p>
+
+    <!-- Google Photos album embed placeholder -->
+    <div class="placeholder-block" id="gallery-container">
+      Photo gallery loading...
+    </div>
+
+    <p style="margin-top:1rem;font-size:14px;color:var(--text-muted);">
+      Got photos of Shirley? Please send them to
+      <a href="mailto:col@dixon.net.au" style="color:var(--brand)">col@dixon.net.au</a>
+      -- even very old ones are treasure!
+    </p>
+
+    <p style="margin-top:0.5rem;">
+      <a href="https://photos.app.goo.gl/fWgqhn9kwSUJptKM9" target="_blank"
+        style="display:inline-block;margin-top:8px;background:var(--brand);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;">
+        &#9658; View Full Gallery on Google Photos
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- BIRTHDAY WISHES -->
+<section class="section" id="wishes">
+  <div class="container">
+    <h2 class="section-title">Birthday Wishes</h2>
+    <p style="margin-bottom:1.5rem;color:var(--text-muted);">Messages of love from family and friends around the world.</p>
+    <div class="wishes-grid" id="wishes-container"></div>
+    <p style="margin-top:1.5rem;font-size:14px;color:var(--text-muted);">
+      Leave a birthday message for Shirley in the <a href="#rsvp" style="color:var(--brand)">RSVP form</a> -- it will appear here as a keepsake.
+    </p>
+  </div>
+</section>
+
+<!-- ORGANISER -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Organised by</h2>
+    <div class="organiser-card">
+      <div class="organiser-avatar">CD</div>
+      <div class="organiser-info">
+        <strong>Colin Dixon</strong>
+        <a href="tel:0419415000">0419 415 000</a> &nbsp;|&nbsp;
+        <a href="mailto:col@dixon.net.au">col@dixon.net.au</a>
+        <br>
+        <span style="font-size:13px;color:var(--text-muted)">
+          For photos, videos, birthday messages or enquiries, please get in touch.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>
+    Shirley Dixon's 90th Birthday &nbsp;|&nbsp; 25 July 2026 &nbsp;|&nbsp; Karbeethong Lodge, Mallacoota
+  </p>
+  <p style="margin-top:8px;">
+    Powered by <a href="https://celebrate.oze.au">celebrate.oze.au</a>
+    &nbsp;|&nbsp; A <a href="https://oze.au">Colin Dixon</a> production
+  </p>
+</footer>
+
+<!-- Scripts -->
+<script src="../../js/celebrate.js"></script>
+<script>
+  // Load config and initialise
+  loadEvent('event.json').then(cfg => {
+    const { event, venue, organiser, rsvpFormUrl, video, song, photos } = cfg;
+
+    // RSVP button
+    if (rsvpFormUrl) {
+      document.getElementById('rsvp-btn').href = rsvpFormUrl;
+    } else {
+      document.getElementById('rsvp-btn').href = '#';
+      document.getElementById('rsvp-btn').textContent = 'RSVP coming soon';
+    }
+
+    // Video
+    if (video.youtubeId) {
+      document.getElementById('video-container').innerHTML = `
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/${video.youtubeId}"
+            title="${video.title}" allowfullscreen></iframe>
+        </div>`;
+    }
+
+    // Song
+    if (song.sunoUrl) {
+      document.getElementById('song-container').innerHTML = `
+        <p style="font-family:var(--font-display);font-size:18px;margin-bottom:8px;">${song.title}</p>
+        <audio controls>
+          <source src="${song.sunoUrl}" type="audio/mpeg">
+          Your browser does not support the audio player.
+        </audio>`;
+    }
+
+    // Countdown
+    startCountdown(event.date, event.timezone);
+  }).catch(err => {
+    console.warn('Could not load event.json, using static content', err);
+    startCountdown('2026-07-25', 'Australia/Melbourne');
+  });
+
+  // Wishes
+  fetch('wishes.json')
+    .then(r => r.json())
+    .then(wishes => renderWishes(wishes, 'wishes-container'))
+    .catch(() => renderWishes([], 'wishes-container'));
+
+  // Gallery placeholder -- replace with real embed when available
+  const galleryContainer = document.getElementById('gallery-container');
+  galleryContainer.innerHTML = `
+    <p style="font-family:var(--font-display);font-size:16px;margin-bottom:8px;">
+      Nine decades of Shirley
+    </p>
+    <p style="font-size:14px;color:var(--text-muted);">
+      Photo gallery embed will appear here. In the meantime, view the full album on Google Photos using the button below.
+    </p>`;
+</script>
+
+</body>
+</html>
