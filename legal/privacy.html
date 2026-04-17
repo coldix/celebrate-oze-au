@@ -1,0 +1,259 @@
+<!-- celebrate.oze.au | legal/privacy.html | v2.0 | 2026-04-17 AEST -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — celebrate.oze.au</title>
+  <meta name="description" content="Privacy Policy for celebrate.oze.au — personalised celebration pages by Colin Dixon / OzOnLine.">
+  <link rel="stylesheet" href="../css/celebrate.css">
+  <style>
+    :root {
+      --page-text:       #0e2a1e;
+      --page-text-muted: rgba(14,42,30,0.72);
+      --page-link:       #0e5c38;
+      --glass-bg:        rgba(255,255,255,0.30);
+      --glass-border:    rgba(255,255,255,0.55);
+      --nav-bg:          rgba(255,255,255,0.22);
+      --nav-border:      rgba(255,255,255,0.42);
+      --nav-text:        rgba(14,42,30,0.88);
+      --toggle-bg:       rgba(14,42,30,0.12);
+      --toggle-border:   rgba(14,42,30,0.28);
+      --toggle-text:     #0e2a1e;
+      --scrim-top:       rgba(0,0,0,0.0);
+      --scrim-bot:       rgba(0,0,0,0.10);
+      --footer-bg:       rgba(255,255,255,0.20);
+      --footer-text:     rgba(14,42,30,0.50);
+      --footer-link:     rgba(14,42,30,0.70);
+      --version-text:    rgba(14,42,30,0.32);
+    }
+    [data-theme="dark"] {
+      --page-text:       #ffffff;
+      --page-text-muted: rgba(255,255,255,0.75);
+      --page-link:       rgba(255,220,140,0.95);
+      --glass-bg:        rgba(10,8,18,0.28);
+      --glass-border:    rgba(255,255,255,0.14);
+      --nav-bg:          rgba(10,8,18,0.20);
+      --nav-border:      rgba(255,255,255,0.12);
+      --nav-text:        rgba(255,255,255,0.88);
+      --toggle-bg:       rgba(255,255,255,0.16);
+      --toggle-border:   rgba(255,255,255,0.38);
+      --toggle-text:     #ffffff;
+      --scrim-top:       rgba(10,8,18,0.18);
+      --scrim-bot:       rgba(10,8,18,0.48);
+      --footer-bg:       rgba(10,8,18,0.40);
+      --footer-text:     rgba(255,255,255,0.38);
+      --footer-link:     rgba(255,255,255,0.56);
+      --version-text:    rgba(255,255,255,0.22);
+    }
+
+    html, body { height: 100%; margin: 0; }
+    body { font-family: var(--font-body); color: var(--page-text); line-height: 1.7; background: #081810; }
+    .bg-main { position: fixed; inset: 0; z-index: 0; background: url('../images/wp-mouth.webp') center center / cover no-repeat; }
+    [data-theme="dark"] .bg-main { background-image: url('../images/wp-betka-sunrise.webp'); }
+    .bg-scrim { position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg, var(--scrim-top) 0%, var(--scrim-bot) 100%); }
+    .site-nav, .page-body, .site-footer { position: relative; z-index: 1; }
+    .glass { background: var(--glass-bg); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid var(--glass-border); border-radius: 18px; }
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--nav-bg); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--nav-border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 62px; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-brand img { height: 34px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.2)); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--nav-text); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--page-text); }
+    .theme-toggle { background: var(--toggle-bg); border: 1px solid var(--toggle-border); color: var(--toggle-text); padding: 5px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+    .page-body { padding: 100px 1.5rem 5rem; }
+    .legal-card { max-width: 760px; margin: 0 auto; padding: 3rem 3rem 2.5rem; }
+    .legal-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--page-text-muted); margin-bottom: 0.5rem; }
+    .legal-title { font-family: var(--font-display); font-size: clamp(24px,5vw,36px); font-weight: 400; color: var(--page-text); margin-bottom: 0.5rem; }
+    .legal-meta { font-size: 13px; color: var(--page-text-muted); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); line-height: 1.8; }
+    .legal-section { margin-bottom: 2rem; }
+    .legal-section h2 { font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--page-text); margin-bottom: 0.6rem; margin-top: 2rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--glass-border); }
+    .legal-section p { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.75rem; }
+    .legal-section ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .legal-section li { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.2rem; }
+    .legal-section a { color: var(--page-link); }
+    .legal-section strong { color: var(--page-text); }
+    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); font-size: 13px; }
+    .legal-nav a { color: var(--page-link); text-decoration: none; font-weight: 700; }
+    .legal-nav a:hover { text-decoration: underline; }
+    .site-footer { position: relative; z-index: 1; background: var(--footer-bg); backdrop-filter: blur(16px); border-top: 1px solid var(--glass-border); text-align: center; padding: 1.75rem 1rem; font-size: 12px; color: var(--footer-text); }
+    .site-footer a { color: var(--footer-link); text-decoration: none; }
+    .site-footer a:hover { color: var(--page-text); }
+    .version-line { margin-top: 6px; font-size: 11px; color: var(--version-text); }
+    @media (max-width: 600px) { .nav-links { display: none; } .legal-card { padding: 2rem 1.25rem; } }
+  </style>
+</head>
+<body>
+
+<div class="bg-main"></div>
+<div class="bg-scrim"></div>
+
+<nav class="site-nav">
+  <a href="/" class="nav-brand">
+    <img src="../images/oze-logo.webp" alt="celebrate.oze.au">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/legal/terms.html">Terms</a></li>
+    <li><a href="/legal/disclaimer.html">Disclaimer</a></li>
+    <li><button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">☾ Dark</button></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+  <div class="legal-card glass">
+
+    <p class="legal-eyebrow">Legal</p>
+    <h1 class="legal-title">Privacy Policy</h1>
+    <div class="legal-meta">
+      <strong>Celebrate / OzOnLine</strong> &nbsp;·&nbsp; celebrate.oze.au<br>
+      ABN 68 758 286 944<br>
+      Last updated: 17 April 2026
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Introduction</h2>
+      <p>Celebrate is run by Colin Dixon, trading as OzOnLine, in Mallacoota, Victoria. ABN 68 758 286 944.</p>
+      <p>This Privacy Policy explains what personal information we collect, why we collect it, how we use it, and how you can contact us.</p>
+      <p>We aim to handle personal information carefully and sensibly. Our service may be used by people in Australia and overseas.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Whose information we collect</h2>
+      <p>We may collect personal information about:</p>
+      <ul>
+        <li>clients who order pages from us</li>
+        <li>event organisers</li>
+        <li>guests who submit RSVP forms</li>
+        <li>people whose names, photos, videos or stories are included on a page</li>
+        <li>people who contact us through the website.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. What we collect</h2>
+      <p>Depending on the project, we may collect:</p>
+      <ul>
+        <li>names, email addresses, phone numbers</li>
+        <li>event role or relationship</li>
+        <li>RSVP status, dietary requirements, drink preferences, guest notes</li>
+        <li>photos, videos, tribute messages</li>
+        <li>page content submitted by the client</li>
+        <li>technical data such as browser, device or usage data from website logs or analytics tools.</li>
+      </ul>
+      <p>Please do not send sensitive personal information unless it is reasonably needed for the service.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Why we collect it</h2>
+      <p>We collect personal information to:</p>
+      <ul>
+        <li>build and run event pages</li>
+        <li>manage RSVPs and guest communication</li>
+        <li>provide page features requested by the client</li>
+        <li>support, update and host pages</li>
+        <li>respond to enquiries</li>
+        <li>keep records of work done</li>
+        <li>protect the service from misuse</li>
+        <li>meet legal, tax and accounting obligations.</li>
+      </ul>
+      <p>We do not collect RSVP information for our own unrelated marketing.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. RSVP data</h2>
+      <p>When a guest fills in an RSVP form, the information is collected to help manage the event. That information may be shared with the relevant event organiser and may be stored in third-party cloud tools used to operate the service, such as Google Sheets or similar systems.</p>
+      <p>Guests should only provide information that is reasonably needed for the event.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Legal basis and consent</h2>
+      <p>Where consent is needed, we rely on the consent given when someone submits a form or provides information to us.</p>
+      <p>Where permitted, we may also collect and use information because it is reasonably necessary to provide the service requested by the client, to communicate with users, or to protect our legitimate business interests, provided that use is fair and appropriate.</p>
+      <p>If you are in the European Union or another jurisdiction with specific privacy rights, you may have additional rights under local law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Children and deceased persons</h2>
+      <p>Some pages may include children and deceased persons. The client is responsible for making sure they have the right to provide that content and any consent that is reasonably needed.</p>
+      <p>If someone believes a page includes personal content that should not appear, they should contact us and we will review the request.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. AI-assisted tools</h2>
+      <p>Some creative features may involve AI-assisted tools. Where that happens, personal material supplied for those features may be processed through third-party tools used to generate music, text, image treatment or similar outputs.</p>
+      <p>We aim to use care with personal material and to keep use of such tools proportionate to the service requested.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Third-party services and overseas storage</h2>
+      <p>We may use third-party providers to help run the service, including hosting providers, email providers, form and spreadsheet tools, cloud storage providers, video or media platforms, analytics providers, and AI tool providers.</p>
+      <p>These providers may store or process data outside Australia. By using the service or submitting information through a page, you understand that your information may be handled through those services.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. How long we keep information</h2>
+      <p>We keep personal information only for as long as reasonably needed for the event and our business records. Our usual approach is:</p>
+      <ul>
+        <li>RSVP and guest list data: kept during the active event period and usually for up to 90 days after the event</li>
+        <li>if the client asks for extended post-event access, RSVP data may be kept for up to 12 months</li>
+        <li>invoices, contracts, correspondence and dispute records may be kept longer where reasonably required for legal, tax or business record purposes.</li>
+      </ul>
+      <p>After that, we may delete or de-identify the information.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Security</h2>
+      <p>We take reasonable steps to protect personal information from misuse, interference, loss, unauthorised access, modification and disclosure.</p>
+      <p>No internet service is completely secure, so we cannot promise absolute security.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. Access and correction</h2>
+      <p>If you want to access, correct or ask about personal information we hold about you, contact us using the details below. We may need to verify your identity before acting on your request.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. Complaints</h2>
+      <p>If you have a privacy concern or complaint, contact us first and we will try to resolve it promptly and fairly. If applicable law gives you the right to complain to a regulator, you may also do that.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>14. Contact</h2>
+      <p>
+        <strong>Celebrate / OzOnLine</strong><br>
+        Colin Dixon<br>
+        Mallacoota, Victoria, Australia<br>
+        ABN 68 758 286 944<br>
+        Email: <a href="mailto:celebrateozeau@gmail.com">celebrateozeau@gmail.com</a><br>
+        Phone: <a href="tel:+61419415000">0419 415 000</a>
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2>15. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. The latest version will appear on celebrate.oze.au.</p>
+    </div>
+
+    <div class="legal-nav">
+      <a href="/legal/terms.html">Terms of Service</a>
+      <a href="/legal/disclaimer.html">Disclaimer</a>
+      <a href="/">← Back to celebrate.oze.au</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>celebrate.oze.au &nbsp;|&nbsp; A <a href="https://oze.au">Colin Dixon / OzOnLine</a> production</p>
+  <p style="margin-top:5px;">
+    <a href="/legal/terms.html">Terms</a> &nbsp;|&nbsp;
+    <a href="/legal/privacy.html">Privacy</a> &nbsp;|&nbsp;
+    <a href="/legal/disclaimer.html">Disclaimer</a>
+  </p>
+  <p class="version-line">&copy; 2026 Colin Dixon &nbsp;|&nbsp; legal/privacy.html v2.0 &nbsp;|&nbsp; 2026-04-17 AEST</p>
+</footer>
+
+<script src="../js/celebrate.js"></script>
+</body>
+</html>

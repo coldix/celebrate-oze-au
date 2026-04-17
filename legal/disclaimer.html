@@ -1,0 +1,210 @@
+<!-- celebrate.oze.au | legal/disclaimer.html | v2.0 | 2026-04-17 AEST -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer — celebrate.oze.au</title>
+  <meta name="description" content="Disclaimer for celebrate.oze.au — personalised celebration pages by Colin Dixon / OzOnLine.">
+  <link rel="stylesheet" href="../css/celebrate.css">
+  <style>
+    :root {
+      --page-text:       #0e2a1e;
+      --page-text-muted: rgba(14,42,30,0.72);
+      --page-link:       #0e5c38;
+      --glass-bg:        rgba(255,255,255,0.30);
+      --glass-border:    rgba(255,255,255,0.55);
+      --nav-bg:          rgba(255,255,255,0.22);
+      --nav-border:      rgba(255,255,255,0.42);
+      --nav-text:        rgba(14,42,30,0.88);
+      --toggle-bg:       rgba(14,42,30,0.12);
+      --toggle-border:   rgba(14,42,30,0.28);
+      --toggle-text:     #0e2a1e;
+      --scrim-top:       rgba(0,0,0,0.0);
+      --scrim-bot:       rgba(0,0,0,0.10);
+      --footer-bg:       rgba(255,255,255,0.20);
+      --footer-text:     rgba(14,42,30,0.50);
+      --footer-link:     rgba(14,42,30,0.70);
+      --version-text:    rgba(14,42,30,0.32);
+    }
+    [data-theme="dark"] {
+      --page-text:       #ffffff;
+      --page-text-muted: rgba(255,255,255,0.75);
+      --page-link:       rgba(255,220,140,0.95);
+      --glass-bg:        rgba(10,8,18,0.28);
+      --glass-border:    rgba(255,255,255,0.14);
+      --nav-bg:          rgba(10,8,18,0.20);
+      --nav-border:      rgba(255,255,255,0.12);
+      --nav-text:        rgba(255,255,255,0.88);
+      --toggle-bg:       rgba(255,255,255,0.16);
+      --toggle-border:   rgba(255,255,255,0.38);
+      --toggle-text:     #ffffff;
+      --scrim-top:       rgba(10,8,18,0.18);
+      --scrim-bot:       rgba(10,8,18,0.48);
+      --footer-bg:       rgba(10,8,18,0.40);
+      --footer-text:     rgba(255,255,255,0.38);
+      --footer-link:     rgba(255,255,255,0.56);
+      --version-text:    rgba(255,255,255,0.22);
+    }
+
+    html, body { height: 100%; margin: 0; }
+    body { font-family: var(--font-body); color: var(--page-text); line-height: 1.7; background: #081810; }
+    .bg-main { position: fixed; inset: 0; z-index: 0; background: url('../images/wp-mouth.webp') center center / cover no-repeat; }
+    [data-theme="dark"] .bg-main { background-image: url('../images/wp-betka-sunrise.webp'); }
+    .bg-scrim { position: fixed; inset: 0; z-index: 0; background: linear-gradient(180deg, var(--scrim-top) 0%, var(--scrim-bot) 100%); }
+    .site-nav, .page-body, .site-footer { position: relative; z-index: 1; }
+    .glass { background: var(--glass-bg); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid var(--glass-border); border-radius: 18px; }
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--nav-bg); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--nav-border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 62px; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-brand img { height: 34px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.2)); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--nav-text); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--page-text); }
+    .theme-toggle { background: var(--toggle-bg); border: 1px solid var(--toggle-border); color: var(--toggle-text); padding: 5px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; white-space: nowrap; }
+    .page-body { padding: 100px 1.5rem 5rem; }
+    .legal-card { max-width: 760px; margin: 0 auto; padding: 3rem 3rem 2.5rem; }
+    .legal-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--page-text-muted); margin-bottom: 0.5rem; }
+    .legal-title { font-family: var(--font-display); font-size: clamp(24px,5vw,36px); font-weight: 400; color: var(--page-text); margin-bottom: 0.5rem; }
+    .legal-meta { font-size: 13px; color: var(--page-text-muted); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); line-height: 1.8; }
+    .legal-section { margin-bottom: 2rem; }
+    .legal-section h2 { font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--page-text); margin-bottom: 0.6rem; margin-top: 2rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--glass-border); }
+    .legal-section p { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.75rem; }
+    .legal-section ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .legal-section li { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.2rem; }
+    .legal-section a { color: var(--page-link); }
+    .legal-section strong { color: var(--page-text); }
+    .legal-nav { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); font-size: 13px; }
+    .legal-nav a { color: var(--page-link); text-decoration: none; font-weight: 700; }
+    .legal-nav a:hover { text-decoration: underline; }
+    .site-footer { position: relative; z-index: 1; background: var(--footer-bg); backdrop-filter: blur(16px); border-top: 1px solid var(--glass-border); text-align: center; padding: 1.75rem 1rem; font-size: 12px; color: var(--footer-text); }
+    .site-footer a { color: var(--footer-link); text-decoration: none; }
+    .site-footer a:hover { color: var(--page-text); }
+    .version-line { margin-top: 6px; font-size: 11px; color: var(--version-text); }
+    @media (max-width: 600px) { .nav-links { display: none; } .legal-card { padding: 2rem 1.25rem; } }
+  </style>
+</head>
+<body>
+
+<div class="bg-main"></div>
+<div class="bg-scrim"></div>
+
+<nav class="site-nav">
+  <a href="/" class="nav-brand">
+    <img src="../images/oze-logo.webp" alt="celebrate.oze.au">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/legal/terms.html">Terms</a></li>
+    <li><a href="/legal/privacy.html">Privacy</a></li>
+    <li><button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">☾ Dark</button></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+  <div class="legal-card glass">
+
+    <p class="legal-eyebrow">Legal</p>
+    <h1 class="legal-title">Disclaimer</h1>
+    <div class="legal-meta">
+      <strong>Celebrate / OzOnLine</strong> &nbsp;·&nbsp; celebrate.oze.au<br>
+      ABN 68 758 286 944<br>
+      Last updated: 17 April 2026
+    </div>
+
+    <div class="legal-section">
+      <h2>1. General information</h2>
+      <p>Celebrate provides customised event pages and related creative services. The material on this website and on client event pages is provided for general information and personal event use only.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Client-supplied content</h2>
+      <p>Much of the content on event pages is supplied by clients, family members, guests or other contributors. We do not independently verify all names, dates, stories, relationships, historical claims, tribute statements, or other factual material supplied by others.</p>
+      <p>We are not responsible for errors, omissions or inaccuracies in client-supplied content.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Wishes wall and guest submissions</h2>
+      <p>Guest messages, wishes wall posts, tributes and similar user submissions reflect the views of the person who posted them. They do not necessarily reflect our views.</p>
+      <p>We may moderate, edit, hide or remove submissions at our discretion.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Sensitive content</h2>
+      <p>Some Celebrate pages may relate to memorials, funerals, wakes or other sensitive life events. We aim to handle such material respectfully, but we do not guarantee that all content will be free from emotional impact, disagreement or family dispute.</p>
+      <p>If you believe content should be reviewed or removed, please contact us.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Third-party services and links</h2>
+      <p>Pages may include content, links or features from third-party services such as YouTube, Google, embedded media providers or AI-related services. We are not responsible for the availability, accuracy, policies or performance of third-party services.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Technical availability</h2>
+      <p>We try to keep the website and hosted pages available, but we do not guarantee continuous availability, uninterrupted access, or error-free operation. Pages may be unavailable due to maintenance, technical faults, internet issues, hosting outages, expired services, or third-party platform problems.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. AI-generated content</h2>
+      <p>Some music, video, text or creative elements may be AI-assisted or AI-generated. Such material may contain factual mistakes, odd wording, inaccurate likenesses, or unexpected results. Clients and users should review content carefully before relying on it.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. No professional advice</h2>
+      <p>Nothing on this website is legal, medical, financial or professional advice.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Beta / development phase</h2>
+      <p>celebrate.oze.au is currently in development. Early clients receive the service free of charge as part of this phase. Features may change, pages may be updated or revised, and no commercial service level agreement applies until formal terms are published and agreed.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Liability</h2>
+      <p>To the fullest extent allowed by law, we are not liable for loss or damage arising from:</p>
+      <ul>
+        <li>reliance on client-supplied content</li>
+        <li>guest-posted material</li>
+        <li>technical outages or data loss</li>
+        <li>third-party service failures</li>
+        <li>use of AI-generated material</li>
+        <li>page suspension, expiry or removal in line with our Terms.</li>
+      </ul>
+      <p>Nothing in this Disclaimer excludes rights that cannot legally be excluded under Australian law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contact</h2>
+      <p>If you have concerns about any page content, please contact:</p>
+      <p>
+        <strong>Celebrate / OzOnLine</strong><br>
+        Colin Dixon<br>
+        Mallacoota, Victoria, Australia<br>
+        ABN 68 758 286 944<br>
+        Email: <a href="mailto:celebrateozeau@gmail.com">celebrateozeau@gmail.com</a><br>
+        Phone: <a href="tel:+61419415000">0419 415 000</a>
+      </p>
+    </div>
+
+    <div class="legal-nav">
+      <a href="/legal/terms.html">Terms of Service</a>
+      <a href="/legal/privacy.html">Privacy Policy</a>
+      <a href="/">← Back to celebrate.oze.au</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>celebrate.oze.au &nbsp;|&nbsp; A <a href="https://oze.au">Colin Dixon / OzOnLine</a> production</p>
+  <p style="margin-top:5px;">
+    <a href="/legal/terms.html">Terms</a> &nbsp;|&nbsp;
+    <a href="/legal/privacy.html">Privacy</a> &nbsp;|&nbsp;
+    <a href="/legal/disclaimer.html">Disclaimer</a>
+  </p>
+  <p class="version-line">&copy; 2026 Colin Dixon &nbsp;|&nbsp; legal/disclaimer.html v2.0 &nbsp;|&nbsp; 2026-04-17 AEST</p>
+</footer>
+
+<script src="../js/celebrate.js"></script>
+</body>
+</html>

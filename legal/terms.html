@@ -1,0 +1,408 @@
+<!-- celebrate.oze.au | legal/terms.html | v2.0 | 2026-04-17 AEST -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — celebrate.oze.au</title>
+  <meta name="description" content="Terms of Service for celebrate.oze.au — personalised celebration pages by Colin Dixon / OzOnLine.">
+  <link rel="stylesheet" href="../css/celebrate.css">
+  <style>
+    :root {
+      --page-text:       #0e2a1e;
+      --page-text-muted: rgba(14,42,30,0.72);
+      --page-link:       #0e5c38;
+      --glass-bg:        rgba(255,255,255,0.30);
+      --glass-border:    rgba(255,255,255,0.55);
+      --glass-lite-bg:   rgba(255,255,255,0.18);
+      --glass-lite-bdr:  rgba(255,255,255,0.38);
+      --nav-bg:          rgba(255,255,255,0.22);
+      --nav-border:      rgba(255,255,255,0.42);
+      --nav-text:        rgba(14,42,30,0.88);
+      --toggle-bg:       rgba(14,42,30,0.12);
+      --toggle-border:   rgba(14,42,30,0.28);
+      --toggle-text:     #0e2a1e;
+      --scrim-top:       rgba(0,0,0,0.0);
+      --scrim-bot:       rgba(0,0,0,0.10);
+      --footer-bg:       rgba(255,255,255,0.20);
+      --footer-text:     rgba(14,42,30,0.50);
+      --footer-link:     rgba(14,42,30,0.70);
+      --version-text:    rgba(14,42,30,0.32);
+    }
+    [data-theme="dark"] {
+      --page-text:       #ffffff;
+      --page-text-muted: rgba(255,255,255,0.75);
+      --page-link:       rgba(255,220,140,0.95);
+      --glass-bg:        rgba(10,8,18,0.28);
+      --glass-border:    rgba(255,255,255,0.14);
+      --glass-lite-bg:   rgba(10,8,18,0.18);
+      --glass-lite-bdr:  rgba(255,255,255,0.10);
+      --nav-bg:          rgba(10,8,18,0.20);
+      --nav-border:      rgba(255,255,255,0.12);
+      --nav-text:        rgba(255,255,255,0.88);
+      --toggle-bg:       rgba(255,255,255,0.16);
+      --toggle-border:   rgba(255,255,255,0.38);
+      --toggle-text:     #ffffff;
+      --scrim-top:       rgba(10,8,18,0.18);
+      --scrim-bot:       rgba(10,8,18,0.48);
+      --footer-bg:       rgba(10,8,18,0.40);
+      --footer-text:     rgba(255,255,255,0.38);
+      --footer-link:     rgba(255,255,255,0.56);
+      --version-text:    rgba(255,255,255,0.22);
+    }
+
+    html, body { height: 100%; margin: 0; }
+    body { font-family: var(--font-body); color: var(--page-text); line-height: 1.7; background: #081810; }
+
+    .bg-main {
+      position: fixed; inset: 0; z-index: 0;
+      background: url('../images/wp-mouth.webp') center center / cover no-repeat;
+    }
+    [data-theme="dark"] .bg-main { background-image: url('../images/wp-betka-sunrise.webp'); }
+    .bg-scrim {
+      position: fixed; inset: 0; z-index: 0;
+      background: linear-gradient(180deg, var(--scrim-top) 0%, var(--scrim-bot) 100%);
+    }
+
+    .site-nav, .page-body, .site-footer { position: relative; z-index: 1; }
+
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+    }
+
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--nav-border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 62px;
+    }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-brand img { height: 34px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.2)); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--nav-text); text-decoration: none;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--page-text); }
+    .theme-toggle {
+      background: var(--toggle-bg); border: 1px solid var(--toggle-border);
+      color: var(--toggle-text); padding: 5px 14px; border-radius: 20px;
+      font-size: 12px; cursor: pointer; white-space: nowrap;
+    }
+
+    .page-body { padding: 100px 1.5rem 5rem; }
+
+    .legal-card { max-width: 760px; margin: 0 auto; padding: 3rem 3rem 2.5rem; }
+
+    .legal-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--page-text-muted); margin-bottom: 0.5rem;
+    }
+    .legal-title {
+      font-family: var(--font-display); font-size: clamp(24px,5vw,36px);
+      font-weight: 400; color: var(--page-text); margin-bottom: 0.5rem;
+    }
+    .legal-meta {
+      font-size: 13px; color: var(--page-text-muted); margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border);
+      line-height: 1.8;
+    }
+
+    .legal-section { margin-bottom: 2rem; }
+    .legal-section h2 {
+      font-family: var(--font-display); font-size: 19px; font-weight: 500;
+      color: var(--page-text); margin-bottom: 0.6rem; margin-top: 2rem;
+      padding-bottom: 0.3rem; border-bottom: 1px solid var(--glass-border);
+    }
+    .legal-section p { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.75rem; }
+    .legal-section ul, .legal-section ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .legal-section li { font-size: 14px; color: var(--page-text-muted); line-height: 1.85; margin-bottom: 0.2rem; }
+    .legal-section a { color: var(--page-link); }
+    .legal-section strong { color: var(--page-text); }
+
+    .legal-nav {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 2.5rem; padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-border); font-size: 13px;
+    }
+    .legal-nav a { color: var(--page-link); text-decoration: none; font-weight: 700; }
+    .legal-nav a:hover { text-decoration: underline; }
+
+    .site-footer {
+      position: relative; z-index: 1;
+      background: var(--footer-bg); backdrop-filter: blur(16px);
+      border-top: 1px solid var(--glass-border); text-align: center;
+      padding: 1.75rem 1rem; font-size: 12px; color: var(--footer-text);
+    }
+    .site-footer a { color: var(--footer-link); text-decoration: none; }
+    .site-footer a:hover { color: var(--page-text); }
+    .version-line { margin-top: 6px; font-size: 11px; color: var(--version-text); }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .legal-card { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-main"></div>
+<div class="bg-scrim"></div>
+
+<nav class="site-nav">
+  <a href="/" class="nav-brand">
+    <img src="../images/oze-logo.webp" alt="celebrate.oze.au">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/legal/privacy.html">Privacy</a></li>
+    <li><a href="/legal/disclaimer.html">Disclaimer</a></li>
+    <li><button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">☾ Dark</button></li>
+  </ul>
+</nav>
+
+<div class="page-body">
+  <div class="legal-card glass">
+
+    <p class="legal-eyebrow">Legal</p>
+    <h1 class="legal-title">Terms of Service</h1>
+    <div class="legal-meta">
+      <strong>Celebrate / OzOnLine</strong> &nbsp;·&nbsp; celebrate.oze.au<br>
+      ABN 68 758 286 944<br>
+      Last updated: 17 April 2026
+    </div>
+
+    <div class="legal-section">
+      <h2>1. Who we are</h2>
+      <p>Celebrate is a bespoke webpage creation and hosting service run by Colin Dixon, trading as OzOnLine, based in Mallacoota, Victoria, Australia. ABN 68 758 286 944.</p>
+      <p>We create and host personalised pages for birthdays, anniversaries, memorials, wakes, retirements, family gatherings, and similar life events.</p>
+      <p>In these Terms, <strong>we</strong>, <strong>us</strong> and <strong>our</strong> mean Celebrate / OzOnLine. <strong>You</strong> and <strong>your</strong> mean the client who orders or uses the service.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. What these Terms cover</h2>
+      <p>These Terms apply when you:</p>
+      <ul>
+        <li>ask us to build or host an event page</li>
+        <li>supply content for an event page</li>
+        <li>use a page we have built for you</li>
+        <li>renew or continue hosting with us.</li>
+      </ul>
+      <p>By using the service, you agree to these Terms.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Our service</h2>
+      <p>We may provide:</p>
+      <ul>
+        <li>webpage design and setup</li>
+        <li>page hosting</li>
+        <li>photo galleries</li>
+        <li>RSVP forms</li>
+        <li>countdown timers</li>
+        <li>video tributes</li>
+        <li>wishes walls</li>
+        <li>music, including AI-assisted or AI-generated songs</li>
+        <li>updates and edits as agreed.</li>
+      </ul>
+      <p>Each project is custom. Features, pricing and timing may vary from one project to another.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Beta and development phase</h2>
+      <p>Some parts of the service may be in a beta or development phase. During that phase:</p>
+      <ul>
+        <li>features may change</li>
+        <li>parts of the service may be added, removed or altered</li>
+        <li>we do not promise uninterrupted service</li>
+        <li>we do not offer a service level agreement or uptime guarantee</li>
+        <li>the service may be offered free of charge to selected early users.</li>
+      </ul>
+      <p>Where a project is provided free during beta, it is provided on an as-is basis, to the fullest extent allowed by law.</p>
+      <p>Nothing in these Terms excludes any rights you may have under Australian Consumer Law that cannot legally be excluded.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Quotes, fees and payment</h2>
+      <p>Unless we state otherwise in writing:</p>
+      <ul>
+        <li>pricing is quoted per project</li>
+        <li>there is no standing public price list</li>
+        <li>setup or design fees are due as agreed</li>
+        <li>hosting fees are payable in advance</li>
+        <li>renewal fees are due before the next hosting period begins.</li>
+      </ul>
+      <p>A deposit or setup fee is non-refundable once work has started.</p>
+      <p>Extra work outside the agreed scope may be charged separately. This includes major redesigns, repeated changes, extra media work, or late content changes after approval.</p>
+      <p>If you do not renew hosting, your page may be archived or removed after notice under clause 15.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>6. Your content</h2>
+      <p>You may give us content such as:</p>
+      <ul>
+        <li>names, dates, stories</li>
+        <li>photos and videos</li>
+        <li>music and tribute material</li>
+        <li>RSVP details and guest messages</li>
+        <li>other text or media.</li>
+      </ul>
+      <p>You keep ownership of content you supply, unless you do not own it and are using it under someone else's permission.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>7. Licence you give us</h2>
+      <p>To provide the service, you give us a non-exclusive, worldwide, royalty-free licence to receive, store, copy, format, edit for layout or technical reasons, host, display, back up and transmit your supplied content for the purpose of building, running, maintaining and supporting your page.</p>
+      <p>This licence continues for as long as needed to provide the service, keep backups, deal with disputes, and meet legal or accounting obligations.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>8. Promotional use and portfolio use</h2>
+      <p>We will not use your family photos, memorial content, tribute material, screenshots, or other project content for portfolio, promotional, social media or print marketing unless you clearly agree to that separately.</p>
+      <p>Any such permission should be an express opt-in and is not required to use the service.</p>
+      <p>If you do give that permission, you may withdraw it for future use by contacting us. That will not affect material already printed, published or distributed before we received your request.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>9. Our intellectual property</h2>
+      <p>Unless we agree otherwise in writing, we own all rights in:</p>
+      <ul>
+        <li>the platform code, templates, design system, page structure and layout</li>
+        <li>branding and written copy created by us</li>
+        <li>edited media created by us</li>
+        <li>AI-generated songs, tribute videos, and other creative output we produce.</li>
+      </ul>
+      <p>You may use the finished page and its content for your personal event purposes only.</p>
+      <p>You must not, without written permission: copy the platform or template for reuse; resell the page; sublicense the page; commercially exploit the design or code; or reproduce our creative work for other commercial uses.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>10. Your promises to us</h2>
+      <p>You promise that:</p>
+      <ul>
+        <li>you have the right to give us all content you submit</li>
+        <li>using that content will not infringe another person's copyright, privacy, moral rights, or other rights</li>
+        <li>event details you supply are accurate</li>
+        <li>you have consent from people shown or identified in photos or videos where consent is reasonably needed</li>
+        <li>you have taken special care with photos or content involving children, vulnerable people, or deceased persons</li>
+        <li>your content is not unlawful, defamatory, misleading, threatening, obscene, or offensive.</li>
+      </ul>
+      <p>We may rely on the information you give us. We are not required to independently verify names, dates, family relationships, stories, or historical claims.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>11. Sensitive content and memorial pages</h2>
+      <p>Some Celebrate pages involve memorials, funerals and emotionally sensitive family content.</p>
+      <p>We reserve the right to refuse, edit, suspend or remove content that we believe is inappropriate, offensive, exploitative, invasive of privacy, defamatory, unlawful, or likely to cause serious dispute or distress.</p>
+      <p>We may do this with or without notice where urgent action is reasonably required.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>12. AI-assisted content</h2>
+      <p>Some creative features may use AI-assisted tools, including music, writing, image treatment or video-related tools.</p>
+      <p>By asking us to create AI-assisted content, you acknowledge that:</p>
+      <ul>
+        <li>AI outputs can contain errors or odd results</li>
+        <li>likeness, tone and factual detail may not always be exact</li>
+        <li>final output may depend on third-party tools outside our control</li>
+        <li>we may refuse requests that are inappropriate, offensive, misleading, or too sensitive to handle safely.</li>
+      </ul>
+      <p>You remain responsible for checking final content before publication.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>13. RSVP forms and guest data</h2>
+      <p>Where your page includes an RSVP form or similar feature, we collect and process submitted details to help manage the event. This may include names, contact details, attendance status, dietary requirements, drink preferences and guest notes.</p>
+      <p>You acknowledge that this information is collected primarily for event administration, may be stored in cloud tools such as Google Sheets, and may be shared with the event organiser.</p>
+      <p>You must not use RSVP data for unrelated marketing unless you have a lawful basis to do so.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>14. Third-party services</h2>
+      <p>Your page may depend on third-party services such as hosting providers, domain or DNS services, email services, Google services, YouTube, embedded media services, AI tool providers, and cloud storage providers.</p>
+      <p>We are not responsible for outages, delays, loss, interruptions or changes caused by third-party services, except to the extent required by law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>15. Suspension, expiry, archival and removal</h2>
+      <p>We may suspend, archive or remove a page if:</p>
+      <ul>
+        <li>fees are not paid or hosting is not renewed</li>
+        <li>the project breaches these Terms</li>
+        <li>the content is unlawful or inappropriate</li>
+        <li>we discontinue the service</li>
+        <li>continued hosting would create legal, technical or safety risk.</li>
+      </ul>
+      <p>Where reasonably possible, we will give at least 30 days written notice before taking a paid page offline for non-renewal or non-payment.</p>
+      <p>We may remove content immediately where urgent action is needed for legal, safety or technical reasons. Archived content may be deleted after a reasonable period.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>16. Refunds</h2>
+      <p>Unless required by law: setup fees are non-refundable once work has started; creative work already done is non-refundable; prepaid hosting fees are not refunded for part-used periods.</p>
+      <p>Nothing in this clause limits your rights under Australian Consumer Law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>17. Liability</h2>
+      <p>To the fullest extent allowed by law, we are not responsible for errors in content supplied by you or your guests, guest-posted wishes wall content, outages caused by third-party services, or indirect loss, loss of opportunity, loss of goodwill, or consequential loss.</p>
+      <p>Where the law allows us to limit liability, our total liability for a paid project is limited to the amount you paid us for that project in the 12 months before the claim arose.</p>
+      <p>Nothing in these Terms excludes or limits any rights, guarantees or remedies that cannot legally be excluded under Australian law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>18. Indemnity</h2>
+      <p>You agree to indemnify us against claims, losses, costs and expenses arising from content you supplied, your breach of these Terms, or your lack of permission to use content you gave us — except to the extent the problem was caused by our own wrongful act, negligence, or breach of law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>19. Changes to these Terms</h2>
+      <p>We may update these Terms from time to time. The latest version will appear on our website. For existing paid projects, material changes will apply from the next renewal or earlier if required by law or if you agree.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>20. Governing law</h2>
+      <p>These Terms are governed by the laws of Victoria, Australia. Any dispute is to be dealt with in the courts of Victoria, unless another court or tribunal has jurisdiction under applicable law.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contact</h2>
+      <p>
+        <strong>Celebrate / OzOnLine</strong><br>
+        Colin Dixon<br>
+        Mallacoota, Victoria, Australia<br>
+        ABN 68 758 286 944<br>
+        Email: <a href="mailto:celebrateozeau@gmail.com">celebrateozeau@gmail.com</a><br>
+        Phone: <a href="tel:+61419415000">0419 415 000</a>
+      </p>
+    </div>
+
+    <div class="legal-nav">
+      <a href="/legal/privacy.html">Privacy Policy</a>
+      <a href="/legal/disclaimer.html">Disclaimer</a>
+      <a href="/">← Back to celebrate.oze.au</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>celebrate.oze.au &nbsp;|&nbsp; A <a href="https://oze.au">Colin Dixon / OzOnLine</a> production</p>
+  <p style="margin-top:5px;">
+    <a href="/legal/terms.html">Terms</a> &nbsp;|&nbsp;
+    <a href="/legal/privacy.html">Privacy</a> &nbsp;|&nbsp;
+    <a href="/legal/disclaimer.html">Disclaimer</a>
+  </p>
+  <p class="version-line">&copy; 2026 Colin Dixon &nbsp;|&nbsp; legal/terms.html v2.0 &nbsp;|&nbsp; 2026-04-17 AEST</p>
+</footer>
+
+<script src="../js/celebrate.js"></script>
+</body>
+</html>

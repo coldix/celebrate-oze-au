@@ -1,4 +1,4 @@
-/* celebrate.oze.au -- shared platform JS */
+/* celebrate.oze.au | celebrate.js | v1.1 | 2026-04-14 22:30 AEST */
 
 /* Load event config and render dynamic content */
 async function loadEvent(jsonPath) {

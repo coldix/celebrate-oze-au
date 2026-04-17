@@ -1,13 +1,13 @@
 #!/bin/bash
 # File: deploy.sh
 # Website: celebrate.oze.au
-# Description: Deployment automation script
-# Version: 26.04.001
-# Date: 13 Apr 2026 | 8:35 PM AEDT
+# Description: Deployment script — commits, pushes to GitHub, triggers Hostinger deploy via GitHub Actions
+# Version: 26.04.002
+# Date: 17 Apr 2026
 # Author: Colin Dixon
 set -e
 
-echo "Preparing to launch celebrate.oze.au updates..."
+echo "Preparing to deploy celebrate.oze.au..."
 
 # Ensure we are on the main branch
 branch=$(git branch --show-current)
@@ -16,7 +16,7 @@ if [ "$branch" != "main" ]; then
     exit 1
 fi
 
-# Show current status first to verify what is being staged
+# Show current status
 git status --short
 
 # Stage all changes
@@ -28,23 +28,22 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
-# Prompt for a custom commit message
-echo "Enter a commit message (or press Enter to use 'Routine site update'):"
+# Prompt for a commit message
+echo "Enter a commit message (or press Enter for 'Routine site update'):"
 read -r message
-
-# Set default message if left blank
 if [ -z "$message" ]; then
     message="Routine site update"
 fi
 
-# Commit the changes
+# Commit and push — GitHub Actions will rsync to Hostinger automatically
 git commit -m "$message"
-
-# Push to trigger Hostinger deployment
 git push origin main
 
-echo "Successfully pushed to main. Hostinger deployment triggered."
 echo ""
-echo "Live URLs:"
+echo "Pushed to GitHub. GitHub Actions is now deploying to Hostinger."
+echo "Check progress: https://github.com/coldix/celebrate-oze-au/actions"
+echo ""
+echo "Live URLs (available in ~30 seconds):"
 echo "  https://celebrate.oze.au"
 echo "  https://celebrate.oze.au/shirley90/"
+echo "  https://celebrate.oze.au/legal/terms.html"
