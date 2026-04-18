@@ -67,7 +67,7 @@
   },
 
   "video": {
-    "youtubeId": "1eh3KLAbbes",
+    "youtubeId": "BBLQz7ozibM",
     "title": "Happy 90th Birthday Shirley!",
     "description": "A birthday tribute video"
   },
@@ -75,6 +75,7 @@
   "song": {
     "sunoUrl": "",
     "youtubeId": "1eh3KLAbbes",
+    "youtubeUrl": "https://www.youtube.com/watch?v=1eh3KLAbbes",
     "spotifyUrl": "https://open.spotify.com/artist/73vZgxBGArQl55zCohABAk",
     "title": "Shirley's Song",
     "artist": "Colin Dixon",
