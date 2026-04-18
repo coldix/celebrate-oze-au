@@ -54,7 +54,11 @@
   "photos": {
     "hero20": "https://lh3.googleusercontent.com/pw/AP1GczNJ_3U2U0nBDWw2rve_mAMyh3DQdglO7OWtX4LlCi5jfoicj4k-NGYBO4wC5TnmlRq-bhht22bMti4t00lQQ3o9Y0QjIWfKBX2RXTON4hVS-qNFgaoO=w800",
     "hero89": "https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800",
-    "gallery2025": "https://photos.app.goo.gl/fWgqhn9kwSUJptKM9",
+    "albums": [
+      { "year": "2026", "url": "https://photos.app.goo.gl/UKwiweEeL7Fyw59r7", "label": "2026 — The Celebration" },
+      { "year": "2025", "url": "https://photos.app.goo.gl/fWgqhn9kwSUJptKM9", "label": "2025" },
+      { "year": "2024", "url": "https://photos.app.goo.gl/J3kcqN5cR4tzHLvHA", "label": "2024" }
+    ],
     "galleryEmbed": ""
   },
 

@@ -237,17 +237,12 @@
       Photo gallery loading...
     </div>
 
-    <p style="margin-top:1rem;font-size:14px;color:var(--text-muted);">
+    <div id="gallery-albums" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:1.25rem;"></div>
+
+    <p style="margin-top:1.25rem;font-size:14px;color:var(--text-muted);">
       Got photos of Shirley? Please send them to
       <a href="mailto:col@dixon.net.au" style="color:var(--brand)">col@dixon.net.au</a>
-      -- even very old ones are treasure!
-    </p>
-
-    <p style="margin-top:0.5rem;">
-      <a href="https://photos.app.goo.gl/fWgqhn9kwSUJptKM9" target="_blank"
-        style="display:inline-block;margin-top:8px;background:var(--brand);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;">
-        &#9658; View Full Gallery on Google Photos
-      </a>
+      — even very old ones are treasure!
     </p>
   </div>
 </section>
@@ -346,15 +341,22 @@
     .then(wishes => renderWishes(wishes, 'wishes-container'))
     .catch(() => renderWishes([], 'wishes-container'));
 
-  // Gallery placeholder -- replace with real embed when available
+  // Gallery placeholder
   const galleryContainer = document.getElementById('gallery-container');
   galleryContainer.innerHTML = `
-    <p style="font-family:var(--font-display);font-size:16px;margin-bottom:8px;">
-      Nine decades of Shirley
-    </p>
-    <p style="font-size:14px;color:var(--text-muted);">
-      Photo gallery embed will appear here. In the meantime, view the full album on Google Photos using the button below.
-    </p>`;
+    <p style="font-family:var(--font-display);font-size:16px;margin-bottom:8px;">Nine decades of Shirley</p>
+    <p style="font-size:14px;color:var(--text-muted);">View the photo albums on Google Photos using the buttons below.</p>`;
+
+  // Album buttons from event.json
+  if (photos && photos.albums) {
+    const albumsEl = document.getElementById('gallery-albums');
+    albumsEl.innerHTML = photos.albums.map(album => `
+      <a href="${album.url}" target="_blank" rel="noopener"
+        style="display:inline-block;background:var(--brand);color:white;padding:10px 22px;border-radius:8px;
+               text-decoration:none;font-size:14px;font-weight:700;">
+        &#9658; ${album.label}
+      </a>`).join('');
+  }
 </script>
 
 </body>
