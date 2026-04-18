@@ -265,10 +265,27 @@
 <section class="section" id="wishes">
   <div class="container">
     <h2 class="section-title">Birthday Wishes</h2>
-    <p style="margin-bottom:1.5rem;color:var(--text-muted);">Messages of love from family and friends around the world.</p>
-    <div class="wishes-grid" id="wishes-container"></div>
-    <p style="margin-top:1.5rem;font-size:14px;color:var(--text-muted);">
-      Leave a birthday message for Shirley in the <a href="#rsvp" style="color:var(--brand)">RSVP form</a> -- it will appear here as a keepsake.
+    <p style="margin-bottom:1.5rem;color:var(--text-muted);">Messages of love from family and friends around the world. Leave your wish below — it will be printed as a keepsake for Shirley.</p>
+
+    <!-- Leave a Wish button -->
+    <a href="https://shirley90th.blogspot.com/2026/04/leave-birthday-wish-for-shirley.html"
+      target="_blank" rel="noopener"
+      style="display:inline-flex;align-items:center;gap:10px;
+             background:var(--brand);color:white;
+             padding:13px 28px;border-radius:50px;text-decoration:none;
+             font-family:var(--font-display);font-size:17px;font-weight:700;
+             box-shadow:0 4px 18px rgba(60,52,137,0.25);
+             transition:transform 0.2s,box-shadow 0.2s;
+             margin-bottom:1.75rem;display:inline-flex;">
+      💬 Leave a Birthday Wish
+    </a>
+
+    <!-- Live feed from Blogger RSS -->
+    <div id="wishes-container"></div>
+    <div id="wishes-feed" style="margin-top:0.5rem;"></div>
+
+    <p style="margin-top:1.5rem;font-size:13px;color:var(--text-muted);">
+      💡 Want to include a photo? Email it to <a href="mailto:col@dixon.net.au" style="color:var(--brand)">col@dixon.net.au</a> and Colin will add it to the wall.
     </p>
   </div>
 </section>
@@ -432,11 +449,31 @@
     startCountdown('2026-07-25', 'Australia/Melbourne');
   });
 
-  // Wishes
+  // Wishes — load from wishes.json first, then overlay Blogger comments
   fetch('wishes.json')
     .then(r => r.json())
     .then(wishes => renderWishes(wishes, 'wishes-container'))
     .catch(() => renderWishes([], 'wishes-container'));
+
+  // Blogger comments feed — live wishes wall
+  const BLOGGER_FEED = 'https://shirley90th.blogspot.com/feeds/comments/default?alt=json&max-results=50';
+  fetch(BLOGGER_FEED)
+    .then(r => r.json())
+    .then(data => {
+      const entries = data.feed.entry || [];
+      const feedEl = document.getElementById('wishes-feed');
+      if (!entries.length) return;
+      feedEl.innerHTML = `<div class="wishes-grid">` + entries.map(e => {
+        const name   = e.author?.[0]?.name?.['$t'] || 'A friend';
+        const msg    = e.content?.['$t'] || e.summary?.['$t'] || '';
+        const date   = e.published?.['$t'] ? new Date(e.published['$t']).toLocaleDateString('en-AU', { day:'numeric', month:'long', year:'numeric' }) : '';
+        return `<div class="wish-card">
+          <p class="wish-text">${msg}</p>
+          <p class="wish-name">— ${name}${date ? ' &nbsp;·&nbsp; ' + date : ''}</p>
+        </div>`;
+      }).join('') + `</div>`;
+    })
+    .catch(() => {});
 </script>
 
 </body>
