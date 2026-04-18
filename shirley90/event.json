@@ -54,6 +54,10 @@
   "photos": {
     "hero20": "https://lh3.googleusercontent.com/pw/AP1GczNJ_3U2U0nBDWw2rve_mAMyh3DQdglO7OWtX4LlCi5jfoicj4k-NGYBO4wC5TnmlRq-bhht22bMti4t00lQQ3o9Y0QjIWfKBX2RXTON4hVS-qNFgaoO=w800",
     "hero89": "https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800",
+    "mainAlbum": {
+      "url": "https://photos.app.goo.gl/mkNTkyiFQ3dg8hw67",
+      "label": "Shirley's Photo Collection — Nine Decades"
+    },
     "albums": [
       { "year": "2026", "url": "https://photos.app.goo.gl/UKwiweEeL7Fyw59r7", "label": "2026 — The Celebration" },
       { "year": "2025", "url": "https://photos.app.goo.gl/fWgqhn9kwSUJptKM9", "label": "2025" },
@@ -63,15 +67,18 @@
   },
 
   "video": {
-    "youtubeId": "",
+    "youtubeId": "1eh3KLAbbes",
     "title": "Happy 90th Birthday Shirley!",
     "description": "A birthday tribute video"
   },
 
   "song": {
     "sunoUrl": "",
+    "youtubeId": "1eh3KLAbbes",
+    "spotifyUrl": "https://open.spotify.com/artist/73vZgxBGArQl55zCohABAk",
     "title": "Shirley's Song",
-    "artist": "Colin Dixon"
+    "artist": "Colin Dixon",
+    "note": "A special song composed for Shirley's 90th — more to come!"
   },
 
   "meta": {
