@@ -24,6 +24,10 @@ celebrate/
 │   └── celebrate.js        # Shared JS (countdown, themes, wishes, config loader)
 └── shirley90/              # Shirley Dixon's 90th birthday celebration
     ├── index.html          # Main celebration page
+    ├── css/
+    │   └── shirley90.css   # Page-specific styles (hero bg, pills, organiser card)
+    ├── js/
+    │   └── shirley90.js    # Page-specific init (event config, gallery, wishes)
     ├── event.json          # *** ALL event-specific data -- edit this file ***
     ├── wishes.json         # Birthday wishes wall entries
     ├── images/             # Local images (if not using Google Photos URLs)
@@ -54,8 +58,10 @@ All event-specific data lives in `event.json`. Edit this file to update:
 1. Duplicate the `shirley90/` folder
 2. Rename to e.g. `johnsmith70/`
 3. Edit `event.json` with the new event details
-4. Update `index.html` hero images and page title
-5. Deploy to `celebrate.oze.au/johnsmith70/`
+4. Update `index.html` hero image and page title
+5. Update `css/shirley90.css` → rename and adjust hero background, page colours
+6. Update `js/shirley90.js` → rename; tweak gallery/wishes logic as needed
+7. Deploy to `celebrate.oze.au/johnsmith70/`
 
 ---
 
