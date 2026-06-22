@@ -39,7 +39,6 @@ jobs:
             --exclude='*.env' \
             --exclude='deploy.sh' \
             --exclude='README.md' \
-            --exclude='SETUP.md' \
             --exclude='.gitignore' \
             --exclude='legal/generate_consent_pdf.py' \
             ./ $SSH_USER@$SSH_HOST:$REMOTE_PATH
