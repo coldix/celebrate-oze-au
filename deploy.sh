@@ -2,9 +2,9 @@
 # File: deploy.sh
 # Website: celebrate.oze.au
 # Description: Deployment script — commits, pushes to GitHub, triggers Hostinger deploy via GitHub Actions
-# Version: 26.04.002
-# Date: 17 Apr 2026
-# Author: Colin Dixon
+# Version: 2.1.1
+# Date: 23 Jun 2026 | 1:38 AM AEST
+# Author: Colin Dixon + Claude Opus 4.8
 set -e
 
 echo "Preparing to deploy celebrate.oze.au..."

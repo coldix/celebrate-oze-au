@@ -1,10 +1,10 @@
 /*
-    celebrate.oze.au — Drifting Confetti Animation
     File: /js/confetti.js
-    Web site by: Colin Dixon BSc, DipEd, Cert IV TAE  +  Claude Opus 4.8
-    Phone: 0419 415 000 · Email: col@dixon.au
-    Website: https://celebrate.oze.au
-    Date: 22 June 2026 · Version: 1.13 · Time AEST
+    Website: celebrate.oze.au
+    Description: Drifting confetti background animation
+    Version: 2.1.1
+    Date: 23 Jun 2026 | 1:38 AM AEST
+    Author: Colin Dixon + Claude Opus 4.8
 
     Fixed full-viewport canvas behind the page (z-index:2 so the confetti drifts
     above the glass cards — semi-transparent and pointer-events:none, so the

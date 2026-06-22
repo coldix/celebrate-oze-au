@@ -1,4 +1,11 @@
-/* celebrate.oze.au | shirley90/js/shirley90.js | v1.13 | 2026-06-22 AEST */
+/*
+  File: /shirley90/js/shirley90.js
+  Website: celebrate.oze.au
+  Description: shirley90 page init — config, gallery, wishes
+  Version: 2.1.1
+  Date: 23 Jun 2026 | 1:38 AM AEST
+  Author: Colin Dixon + Claude Opus 4.8
+*/
 
 // Load config and initialise all dynamic sections
 loadEvent('event.json').then(cfg => {

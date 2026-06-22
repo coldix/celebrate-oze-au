@@ -1,10 +1,10 @@
 <!--
-    celebrate.oze.au — project README
     File: /README.md
-    Web site by: Colin Dixon BSc, DipEd, Cert IV TAE  +  Claude Opus 4.8
-    Phone: 0419 415 000 · Email: col@dixon.au
-    Website: https://celebrate.oze.au
-    Date: 22 June 2026 · Version: 1.13 · Time AEST
+    Website: celebrate.oze.au
+    Description: Project README
+    Version: 2.1.1
+    Date: 23 Jun 2026 | 1:38 AM AEST
+    Author: Colin Dixon + Claude Opus 4.8
 -->
 # celebrate.oze.au
 
@@ -123,12 +123,13 @@ One version number drives everything. Assets are linked with a `?v=` cache-buste
 so browsers fetch fresh files after a deploy. **Never bump by hand** — run:
 
 ```bash
-./bump-version.sh 1.14    # then commit + push
+./bump-version.sh 2.1.2    # semver vX.Y.Z; then commit + push
 ```
 
 It updates `?v=` busters, the `VERSION` constant in `js/celebrate.js`, every
-`Version:` / one-line `| vX.Y |` header, footer build stamps, and the `Date:`
-headers (set to today, AEST) across the repo.
+`Version:` header, the footer build stamps, and the `Date:` headers (today,
+date + time AEST) across the repo. Version is pure semver; the date is a
+separate auto-maintained build date. House standard: https://oze.au/docs/PLAYBOOK.md
 
 ---
 

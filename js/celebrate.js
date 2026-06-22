@@ -1,5 +1,12 @@
-/* celebrate.oze.au | celebrate.js | v1.13 | 2026-06-22 AEST */
-const VERSION = 'v1.13';   // source of truth for bump-version.sh
+/*
+  File: /js/celebrate.js
+  Website: celebrate.oze.au
+  Description: Shared JS — countdown, themes, wishes, config loader
+  Version: 2.1.1
+  Date: 23 Jun 2026 | 1:38 AM AEST
+  Author: Colin Dixon + Claude Opus 4.8
+*/
+const VERSION = 'v2.1.1';   // source of truth for bump-version.sh
 
 /* Load event config and render dynamic content */
 async function loadEvent(jsonPath) {
