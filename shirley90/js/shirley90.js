@@ -1,4 +1,4 @@
-/* celebrate.oze.au | shirley90/js/shirley90.js | v1.11 | 2026-04-20 AEST */
+/* celebrate.oze.au | shirley90/js/shirley90.js | v1.13 | 2026-06-22 AEST */
 
 // Load config and initialise all dynamic sections
 loadEvent('event.json').then(cfg => {

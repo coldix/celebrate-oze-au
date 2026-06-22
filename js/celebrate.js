@@ -1,4 +1,5 @@
-/* celebrate.oze.au | celebrate.js | v1.2 | 2026-04-18 AEST */
+/* celebrate.oze.au | celebrate.js | v1.13 | 2026-06-22 AEST */
+const VERSION = 'v1.13';   // source of truth for bump-version.sh
 
 /* Load event config and render dynamic content */
 async function loadEvent(jsonPath) {
