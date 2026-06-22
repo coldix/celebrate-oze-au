@@ -1,8 +1,17 @@
+<!--
+    celebrate.oze.au — project README
+    File: /README.md
+    Web site by: Colin Dixon BSc, DipEd, Cert IV TAE  +  Claude Opus 4.8
+    Phone: 0419 415 000 · Email: col@dixon.au
+    Website: https://celebrate.oze.au
+    Date: 22 June 2026 · Version: 1.13 · Time AEST
+-->
 # celebrate.oze.au
 
 **Beautiful personalised celebration pages for birthdays, anniversaries and life's big moments.**
 
-A [Colin Dixon / OzOnLine](https://oze.au) project.
+A [Colin Dixon / OzOnLine](https://oze.au) project. Pure HTML / CSS / JS — no
+framework, no build step.
 
 ---
 
@@ -18,18 +27,24 @@ A [Colin Dixon / OzOnLine](https://oze.au) project.
 ```
 celebrate/
 ├── index.html              # Platform homepage
+├── README.md               # This file (the only doc — versioned via bump-version.sh)
+├── bump-version.sh         # One-shot version bump across all files (see Versioning)
+├── deploy.sh               # Local helper: commit + push to main
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Actions → rsync over SSH → Hostinger
 ├── css/
 │   └── celebrate.css       # Shared styles (dark/light mode, all components)
 ├── js/
-│   └── celebrate.js        # Shared JS (countdown, themes, wishes, config loader)
+│   ├── celebrate.js        # Shared JS (countdown, themes, wishes, config loader)
+│   └── confetti.js         # Drifting confetti canvas animation (site-wide)
+├── legal/                  # Terms, privacy, disclaimer
 └── shirley90/              # Shirley Dixon's 90th birthday celebration
     ├── index.html          # Main celebration page
-    ├── css/
-    │   └── shirley90.css   # Page-specific styles (hero bg, pills, organiser card)
-    ├── js/
-    │   └── shirley90.js    # Page-specific init (event config, gallery, wishes)
-    ├── event.json          # *** ALL event-specific data -- edit this file ***
+    ├── css/shirley90.css   # Page-specific styles (hero bg, pills, organiser card)
+    ├── js/shirley90.js     # Page-specific init (event config, gallery, wishes)
+    ├── event.json          # *** ALL event-specific data — edit this file ***
     ├── wishes.json         # Birthday wishes wall entries
+    ├── generate_flyer.py   # Flyer/PDF generator
     ├── images/             # Local images (if not using Google Photos URLs)
     └── audio/              # Birthday song audio file (if not using Suno URL)
 ```
@@ -38,7 +53,7 @@ celebrate/
 
 ## Customising an Event
 
-All event-specific data lives in `event.json`. Edit this file to update:
+All event-specific data lives in `event.json`. Edit it to update:
 
 - Person's name, age, birthday
 - Event date, time, venue
@@ -49,37 +64,87 @@ All event-specific data lives in `event.json`. Edit this file to update:
 - Suno song URL (birthday song)
 - Google Photos gallery URL
 
-**No other files need to be edited for a new event.**
+**No other files need editing for a data change to an existing event.**
 
 ---
 
 ## Creating a New Celebration
 
-1. Duplicate the `shirley90/` folder
-2. Rename to e.g. `johnsmith70/`
-3. Edit `event.json` with the new event details
-4. Update `index.html` hero image and page title
-5. Update `css/shirley90.css` → rename and adjust hero background, page colours
-6. Update `js/shirley90.js` → rename; tweak gallery/wishes logic as needed
-7. Deploy to `celebrate.oze.au/johnsmith70/`
+```bash
+# 1. Copy shirley90 as a template
+cp -r shirley90/ johnsmith70/
+
+# 2. Edit the config — usually the ONLY file you need to change
+nano johnsmith70/event.json
+```
+
+Then, if the look needs to differ:
+- Rename / adjust `css/shirley90.css` (hero background, page colours)
+- Rename / tweak `js/shirley90.js` (gallery / wishes logic)
+- Update the hero image + page title in the new `index.html`
+
+The new page goes live at `celebrate.oze.au/johnsmith70/`.
 
 ---
 
-## Deployment (Hostinger)
+## Deployment
 
-1. Upload the entire `celebrate/` folder contents to your Hostinger File Manager
-2. Point `celebrate.oze.au` subdomain to the folder root
-3. Each celebration lives at `celebrate.oze.au/[eventname]/`
+**Auto-deploys via GitHub Actions on push to `main`** — `.github/workflows/deploy.yml`
+rsyncs the repo over SSH to the Hostinger subfolder. No webhook, no manual upload.
 
-**Subdomain setup in Hostinger:**
-- Hosting > Manage > Subdomains
-- Add `celebrate` pointing to `/public_html/celebrate/`
+```bash
+./deploy.sh        # local helper: checks branch, shows diff, commits, pushes main
+# …or just: git push origin main
+```
+
+**Always verify live** — a green CI tick can rsync stale bytes. Curl the live
+asset's `?v=` and confirm the version actually changed:
+
+```bash
+curl -s "https://celebrate.oze.au/index.html?z=$RANDOM" | grep -o 'confetti.js?v=[0-9.]*'
+curl -s "https://celebrate.oze.au/js/confetti.js?z=$RANDOM" | grep -o 'Version: [0-9.]*'
+```
+
+If a deploy times out (Hostinger fail2ban, exit 255), just re-run it:
+
+```bash
+gh run rerun --repo coldix/celebrate-oze-au \
+  $(gh run list --repo coldix/celebrate-oze-au -L1 --json databaseId --jq '.[0].databaseId')
+```
+
+**One-time subdomain setup (Hostinger hPanel):** Domains → Subdomains → add
+`celebrate` on `oze.au`, document root `/public_html/celebrate/`.
+
+---
+
+## Versioning & Cache-Busting
+
+One version number drives everything. Assets are linked with a `?v=` cache-buster
+so browsers fetch fresh files after a deploy. **Never bump by hand** — run:
+
+```bash
+./bump-version.sh 1.14    # then commit + push
+```
+
+It updates `?v=` busters, the `VERSION` constant in `js/celebrate.js`, every
+`Version:` / one-line `| vX.Y |` header, footer build stamps, and the `Date:`
+headers (set to today, AEST) across the repo.
+
+---
+
+## Animations
+
+`js/confetti.js` — a self-contained drifting-confetti canvas (brand palette amber
+`#ffc107` / blue `#3498db` / white, semi-transparent), injected behind content at
+`z-index:2`. Skips on `prefers-reduced-motion`, fewer pieces on mobile, pauses on
+hidden tab. **On globally**; opt a page out with `<body data-confetti="off">`.
 
 ---
 
 ## Features
 
 - Dark / light mode toggle (saved to localStorage)
+- Site-wide confetti celebration animation
 - Live countdown timer to the event
 - Then & now hero photos
 - Google Photos gallery integration
@@ -87,9 +152,8 @@ All event-specific data lives in `event.json`. Edit this file to update:
 - Suno birthday song audio player
 - Birthday wishes wall (loaded from `wishes.json`)
 - RSVP button linking to Google Form
-- All details driven from `event.json` -- no hardcoded content
-- Fully mobile responsive
-- No framework dependencies -- pure HTML / CSS / JS
+- All details driven from `event.json` — no hardcoded content
+- Fully mobile responsive, no framework dependencies
 
 ---
 
@@ -111,4 +175,4 @@ Contact [col@dixon.net.au](mailto:col@dixon.net.au) for enquiries.
 
 ---
 
-*celebrate.oze.au -- because every milestone deserves a beautiful moment.*
+*celebrate.oze.au — because every milestone deserves a beautiful moment.*

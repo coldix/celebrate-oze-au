@@ -39,7 +39,7 @@ OLD_RE="${OLD//./\\.}"
 # Touch every source file in root + event folders.
 HTML=$(find . -name '*.html' -not -path './legal/*' -not -path './.git/*')
 ASSETS=$(find . \( -name '*.css' -o -name '*.js' \) -not -path './.git/*')
-ALL="$HTML $ASSETS"
+ALL="$HTML $ASSETS README.md"
 
 # ?v= cache-busters in HTML  (the `=` is why naive bumps failed)
 sed -i '' "s/?v=${OLD_RE}/?v=${NEW}/g" $HTML
