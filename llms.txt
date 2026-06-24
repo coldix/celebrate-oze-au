@@ -1,0 +1,9 @@
+# Celebrate — celebrate.oze.au
+
+> Personalised birthday celebration pages: photos, video, RSVP and birthday wishes, from oze.au (Colin Dixon).
+
+## Pages
+- [Home](https://celebrate.oze.au/): create or view a celebration page.
+
+## About
+- Part of the oze.au family. House standard: https://oze.au/docs/PLAYBOOK.md
