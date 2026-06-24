@@ -17,3 +17,11 @@ Thumbs.db
 # Sensitive
 *.env
 config.local.json
+
+# secrets — never commit
+key.txt
+*.pem
+id_*
+*_rsa
+*_ed25519
+.env
