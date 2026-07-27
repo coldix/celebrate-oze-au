@@ -1,9 +1,21 @@
 # Celebrate — celebrate.oze.au
 
-> Personalised birthday celebration pages: photos, video, RSVP and birthday wishes, from oze.au (Colin Dixon).
+> Personalised celebration pages for birthdays and life’s milestones, by Colin Dixon / OzOnLine (Mallacoota, Australia).
 
 ## Pages
-- [Home](https://celebrate.oze.au/): create or view a celebration page.
+- [Home](https://celebrate.oze.au/): What Celebrate provides — invitations, messages, photos, video, music, 360° venue experiences and lasting digital memories.
+- [Shirley Dixon’s 90th](https://celebrate.oze.au/shirley90/): Completed celebration showcase (25 July 2026, Karbeethong Lodge, Mallacoota; about 70 guests).
+- [Original invitation archive](https://celebrate.oze.au/shirley90/invitation.html): Historical pre-event invitation for Shirley’s 90th.
+
+## Key facts — Shirley’s 90th
+- Who: Shirley Dixon
+- Occasion: 90th birthday
+- When: Saturday 25 July 2026
+- Where: Karbeethong Lodge, 16 Schnapper Point Drive, Mallacoota VIC 3892, Australia
+- Attendance: about 70 family members and friends
+- Lodge bookings: Graeme and Jenny — (03) 5158 0411 — admin@karbeethonglodge.com.au — https://www.karbeethonglodge.com.au/
+- Celebrate is not the booking agent for Karbeethong Lodge
 
 ## About
 - Part of the oze.au family. House standard: https://oze.au/docs/PLAYBOOK.md
+- Contact: col@dixon.net.au

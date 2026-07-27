@@ -25,3 +25,8 @@ id_*
 *_rsa
 *_ed25519
 .env
+
+# Private source material — never deploy or commit RSVP exports
+docs/**/*.csv
+*.csv
+docs/mission.md

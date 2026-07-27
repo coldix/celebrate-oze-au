@@ -1,7 +1,8 @@
 {
   "event": {
-    "title": "Shirley Dixon Turns 90!",
-    "subtitle": "A very special afternoon tea",
+    "status": "completed",
+    "title": "Shirley Dixon's 90th Birthday",
+    "subtitle": "A celebration to remember",
     "person": {
       "name": "Shirley Dixon",
       "firstName": "Shirley",
@@ -9,86 +10,98 @@
       "birthday": "1936-07-25"
     },
     "date": "2026-07-25",
+    "dateDisplay": "Saturday 25 July 2026",
     "startTime": "12:00",
     "endTime": "17:00",
-    "afternoonTeaStart": "14:00",
-    "afternoonTeaEnd": "16:00",
-    "rsvpDeadline": "2026-06-25",
-    "timezone": "Australia/Melbourne"
+    "afternoonTea": "Afternoon tea from 2 to 4pm",
+    "timezone": "Australia/Melbourne",
+    "attendanceNote": "About 70 family members and friends",
+    "summary": "Shirley Dixon's 90th birthday was celebrated on 25 July 2026 at Karbeethong Lodge in Mallacoota, with about 70 family members and friends gathering for an afternoon of food, music, photographs and good company by the water."
   },
 
   "venue": {
     "name": "Karbeethong Lodge",
-    "address": "12 Schnapper Point Drive",
+    "address": "16 Schnapper Point Drive",
     "suburb": "Mallacoota",
     "state": "VIC",
     "postcode": "3892",
+    "country": "Australia",
+    "fullAddress": "16 Schnapper Point Drive, Mallacoota VIC 3892, Australia",
     "phone": "(03) 5158 0411",
+    "phoneTel": "+61351580411",
     "email": "admin@karbeethonglodge.com.au",
-    "website": "https://www.karbeethonglodge.com.au",
-    "description": "A beautiful historic guesthouse right on the water at Mallacoota",
-    "mapsUrl": "https://maps.google.com/?cid=6053129429632339692",
-    "accommodation": "Accommodation available at the Lodge. Contact Graeme and Jenny directly to book.",
-    "hosts": "Graeme and Jenny"
+    "website": "https://www.karbeethonglodge.com.au/",
+    "hosts": "Graeme and Jenny",
+    "description": "A welcoming waterfront lodge in Mallacoota — an ideal setting for family celebrations and group gatherings.",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=16+Schnapper+Point+Drive+Mallacoota+VIC+3892",
+    "mapsCidUrl": "https://maps.google.com/?cid=6053129429632339692",
+    "caseStudy": "Karbeethong Lodge gave the celebration space to gather, share food and enjoy Mallacoota's waterfront setting. Guests could stay on site, and the lodge felt personal rather than formal — well suited to a multi-generation family milestone."
   },
 
   "organiser": {
     "name": "Colin Dixon",
     "email": "col@dixon.net.au",
     "phone": "0419 415 000",
-    "photoEmail": "col@dixon.net.au",
+    "phoneTel": "+61419415000",
     "website": "https://dixon.au"
   },
-
-  "drinks": {
-    "provided": ["Beer", "Red wine", "White wine", "Bubbles", "Tea", "Coffee"],
-    "policy": "BYO welcome. Venue is fully licensed."
-  },
-
-  "food": {
-    "policy": "Bring a plate if you'd like -- savoury, sweet, cheese and crackers, fruit, or anything you fancy. Plenty of food will be on hand, so no pressure at all."
-  },
-
-  "rsvpFormUrl": "https://forms.gle/C7Q6DsNQbhroqiyG8",
 
   "photos": {
     "hero20": "https://lh3.googleusercontent.com/pw/AP1GczNJ_3U2U0nBDWw2rve_mAMyh3DQdglO7OWtX4LlCi5jfoicj4k-NGYBO4wC5TnmlRq-bhht22bMti4t00lQQ3o9Y0QjIWfKBX2RXTON4hVS-qNFgaoO=w800",
     "hero89": "https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w800",
-    "mainAlbum": {
-      "url": "https://photos.app.goo.gl/mkNTkyiFQ3dg8hw67",
-      "label": "Shirley's Photo Collection — Nine Decades"
+    "eventAlbum": {
+      "url": "https://photos.app.goo.gl/7a7Nko4ziAiUzRCz6",
+      "label": "Event photographs — 25 July 2026"
     },
-    "albums": [
-      { "year": "2026", "url": "https://photos.app.goo.gl/UKwiweEeL7Fyw59r7", "label": "2026 — The Celebration" },
-      { "year": "2025", "url": "https://photos.app.goo.gl/fWgqhn9kwSUJptKM9", "label": "2025" },
-      { "year": "2024", "url": "https://photos.app.goo.gl/J3kcqN5cR4tzHLvHA", "label": "2024" }
-    ],
-    "galleryEmbed": ""
+    "lifetimeAlbum": {
+      "url": "https://photos.app.goo.gl/mkNTkyiFQ3dg8hw67",
+      "label": "Shirley's photo collection — nine decades"
+    },
+    "gallery": []
   },
 
   "video": {
     "youtubeId": "BBLQz7ozibM",
-    "title": "Happy 90th Birthday Shirley!",
-    "description": "A birthday tribute video"
+    "title": "Birthday tribute video",
+    "description": "A birthday tribute put together for Shirley's celebration."
   },
 
-  "song": {
-    "sunoUrl": "",
-    "youtubeId": "1eh3KLAbbes",
-    "youtubeUrl": "https://www.youtube.com/watch?v=1eh3KLAbbes",
-    "spotifyUrl": "https://open.spotify.com/artist/73vZgxBGArQl55zCohABAk",
-    "appleMusicUrl": "https://music.apple.com/us/artist/ozeaumusic/1885755634",
-    "title": "Shirley's Song",
-    "artist": "Colin Dixon",
-    "note": "A special song composed for Shirley's 90th — more to come!"
+  "songs": [
+    {
+      "id": "shirley",
+      "primary": true,
+      "youtubeId": "wITs63Cx9AQ",
+      "youtubeUrl": "https://youtu.be/wITs63Cx9AQ",
+      "title": "Shirley's Song",
+      "artist": "Colin Dixon",
+      "note": "A personalised birthday song composed for Shirley's 90th."
+    },
+    {
+      "id": "frank",
+      "primary": false,
+      "youtubeId": "1eh3KLAbbes",
+      "youtubeUrl": "https://youtu.be/1eh3KLAbbes",
+      "title": "Frank's 87th — Celebrate music example",
+      "artist": "ozeaumusic",
+      "note": "Another personalised milestone song from Celebrate / music.oze.au.",
+      "exampleLabel": "Example from another celebration",
+      "musicSite": "https://music.oze.au"
+    }
+  ],
+
+  "kuula": {
+    "shareUrl": "https://kuula.co/share/LbF8v?logo=1&info=0&fs=1&vr=1&zoom=1&initload=0&autorotate=0.33&autopalt=1&thumbs=0",
+    "title": "Karbeethong Lodge — 360° experience",
+    "description": "Step inside and around the lodge with an interactive 360° view."
   },
 
   "meta": {
-    "siteName": "Celebrate -- Shirley Dixon's 90th Birthday",
-    "siteUrl": "https://celebrate.oze.au/shirley90",
-    "description": "Join us to celebrate Shirley Dixon's 90th birthday -- Saturday 25 July 2026 at Karbeethong Lodge, Mallacoota",
+    "siteName": "Shirley Dixon's 90th Birthday | celebrate.oze.au",
+    "siteUrl": "https://celebrate.oze.au/shirley90/",
+    "description": "Shirley Dixon's 90th birthday celebration at Karbeethong Lodge, Mallacoota — 25 July 2026. Photos, song, messages and a lasting digital memory from celebrate.oze.au.",
     "themeColor": "#3C3489",
-    "poweredBy": "celebrate.oze.au -- a Colin Dixon production",
-    "poweredByUrl": "https://celebrate.oze.au"
+    "ogImage": "https://lh3.googleusercontent.com/pw/AP1GczOovVuVJd8ai5b42Q-Fkpn4guZ3ozP-_Ti5P9oRhUUxbmCdzOJ83Q55dEZncLdh_2aYr5pzjLUQDsY08JPLu3vnW79XejR-7A5eLzJF5XAlJxgDCOWs=w1200",
+    "poweredBy": "celebrate.oze.au",
+    "poweredByUrl": "https://celebrate.oze.au/"
   }
 }

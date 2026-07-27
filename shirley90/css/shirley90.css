@@ -1,74 +1,92 @@
 /*
   File: /shirley90/css/shirley90.css
   Website: celebrate.oze.au
-  Description: shirley90 page-specific styles
-  Version: 2.1.1
-  Date: 23 Jun 2026 | 1:38 AM AEST
+  Description: Shirley 90th post-event page styles
+  Version: 3.0.0
+  Date: 27 Jul 2026 | 10:16 PM AEST
   Author: Colin Dixon + Claude Opus 4.8
 */
 
-/* Background */
-body { background: #0f0e1a; }
-
-.hero {
+/* Hero */
+.story-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 2.5rem) 1.5rem 3.25rem;
+  color: #EEEDFE;
+  text-align: center;
+  overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(15,14,26,0.18) 0%, rgba(15,14,26,0.55) 100%),
+    linear-gradient(180deg, rgba(15,14,26,0.25) 0%, rgba(15,14,26,0.72) 55%, rgba(15,14,26,0.92) 100%),
     url('../../images/wp-main-sunrise.webp') center center / cover no-repeat;
 }
 
-/* Fix long email/text overflow in detail cards */
-.detail-value { word-break: break-word; overflow-wrap: break-word; }
-
-/* Venue map link */
-.venue-map-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: var(--brand); text-decoration: none; font-size: 14px;
-  font-weight: 700; margin-top: 8px;
+.story-hero .hero-eyebrow {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1rem; letter-spacing: 0.18em; color: #AFA9EC;
+  margin-bottom: 0.35rem;
 }
-.venue-map-link:hover { text-decoration: underline; }
-[data-theme="dark"] .venue-map-link { color: var(--brand-pale); }
 
-/* Drinks pills */
-.drinks-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-.pill {
-  font-size: 13px; padding: 4px 14px; border-radius: 20px;
-  background: var(--brand-light); color: var(--brand); font-weight: 700;
+.story-hero .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-weight: 500; line-height: 1.1; margin-bottom: 0.5rem;
 }
-[data-theme="dark"] .pill { background: rgba(60,52,137,0.4); color: #AFA9EC; }
 
-/* Organiser card */
-.organiser-card {
-  display: flex; align-items: center; gap: 1rem;
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.25rem;
-  box-shadow: var(--shadow);
+.story-hero .hero-age {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  font-weight: 700; color: #CECBF6; line-height: 1;
+  margin-bottom: 0.85rem;
 }
-.organiser-avatar {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--brand); display: flex; align-items: center;
-  justify-content: center; font-family: var(--font-display);
-  font-size: 20px; color: #EEEDFE; flex-shrink: 0;
-}
-.organiser-info { font-size: 14px; }
-.organiser-info strong { display: block; font-size: 16px; color: var(--text); }
-.organiser-info a { color: var(--brand); text-decoration: none; }
-[data-theme="dark"] .organiser-info a { color: var(--brand-pale); }
 
-/* Main album button */
-.main-album-btn {
-  display: flex; align-items: center; gap: 1rem;
-  background: var(--brand); color: white;
-  padding: 1.1rem 1.5rem; border-radius: 12px;
-  text-decoration: none; margin-bottom: 4px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 18px rgba(60,52,137,0.25);
+.story-hero .hero-meta {
+  max-width: 36rem; margin: 0 auto 1.75rem;
+  color: rgba(238,237,254,0.88); font-size: 1.05rem; line-height: 1.65;
 }
-.main-album-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(60,52,137,0.35); }
 
-/* Staggered fade-in on load */
-.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
-.fade-in:nth-child(1) { animation-delay: 0.1s; }
-.fade-in:nth-child(2) { animation-delay: 0.25s; }
-.fade-in:nth-child(3) { animation-delay: 0.4s; }
-.fade-in:nth-child(4) { animation-delay: 0.55s; }
-@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+.story-hero .hero-meta strong { color: #fff; font-weight: 700; }
+
+.completed-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+  color: #EEEDFE; border-radius: 999px; padding: 0.35rem 0.9rem;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 1rem;
+}
+
+.story-hero .then-now { margin-top: 0.5rem; }
+.story-hero .then-now-label { color: #AFA9EC; }
+
+/* Music dual layout */
+.music-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1rem;
+  align-items: start;
+}
+.music-grid .embed-card.is-example {
+  border-style: dashed;
+}
+.example-badge {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--brand);
+  background: var(--brand-light); border-radius: 999px;
+  padding: 0.2rem 0.6rem; margin-bottom: 0.45rem;
+}
+[data-theme="dark"] .example-badge {
+  background: rgba(60,52,137,0.45); color: var(--brand-pale);
+}
+
+/* Celebrate strip */
+.celebrate-note {
+  display: grid; grid-template-columns: 1fr auto; gap: 1.25rem;
+  align-items: center;
+}
+.celebrate-note p { color: var(--text-muted); margin-top: 0.35rem; }
+
+@media (max-width: 800px) {
+  .music-grid { grid-template-columns: 1fr; }
+  .celebrate-note { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .story-hero { padding-top: calc(var(--nav-h) + 1.75rem); padding-bottom: 2.5rem; }
+}
