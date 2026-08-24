@@ -2,8 +2,8 @@
     File: /README.md
     Website: celebrate.oze.au
     Description: Project README
-    Version: 3.0.0
-    Date: 27 Jul 2026 | 10:16 PM AEST
+    Version: 3.0.1
+    Date: 24 Aug 2026 | 5:14 PM AEST
     Author: Colin Dixon + Claude Opus 4.8
 -->
 # celebrate.oze.au

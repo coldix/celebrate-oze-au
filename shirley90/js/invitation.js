@@ -2,8 +2,8 @@
   File: /shirley90/js/invitation.js
   Website: celebrate.oze.au
   Description: Archived invitation page init (historical pre-event UI)
-  Version: 3.0.0
-  Date: 27 Jul 2026 | 10:00 PM AEST
+  Version: 3.0.1
+  Date: 24 Aug 2026 | 5:14 PM AEST
   Author: Colin Dixon + Claude Opus 4.8
 */
 

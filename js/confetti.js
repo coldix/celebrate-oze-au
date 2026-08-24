@@ -2,8 +2,8 @@
     File: /js/confetti.js
     Website: celebrate.oze.au
     Description: Drifting confetti background animation
-    Version: 3.0.0
-    Date: 27 Jul 2026 | 10:16 PM AEST
+    Version: 3.0.1
+    Date: 24 Aug 2026 | 5:14 PM AEST
     Author: Colin Dixon + Claude Opus 4.8
 
     Fixed full-viewport canvas behind the page (z-index:2 so the confetti drifts
