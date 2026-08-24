@@ -2,13 +2,14 @@
  * File: css/adnet.css
  * Website: celebrate.oze.au
  * Description: adnet ad-slot styling, tuned to the Celebrate light/glass theme
- * Version: 1.0.0
- * Date: 24 Aug 2026 | 5:14 PM AEST
+ * Version: 1.1.0
+ * Date: 24 Aug 2026 | 6:54 PM AEST
  * Author: Colin Dixon + Claude Opus 5
  *
  * Source of truth is https://github.com/coldix/adnet -> embed/adnet.css. Keep the two in
  * step; only the theme overrides at the bottom of this file are site-specific.
  */
+
 
 
 /* The host page reserves the box, and the box is FIXED, not a floor: a min-height alone
@@ -50,7 +51,11 @@
 .ad-row > .ad-col-2,
 .ad-row > .ad-col-3 { display: none; }
 
-@container (min-width: 620px) {
+/* 620px missed real tablets: a WordPress article column commonly holds at ~598-600px from
+   768px through 926px+ viewport width (theme padding/sidebar, not fluid), only growing
+   again past 1024px. 580px covers that whole band while staying above a phone's ~440px
+   container, so "tablet" reliably means two columns, not one. */
+@container (min-width: 580px) {
   .ad-row { grid-template-columns: repeat(2, 300px); }
   .ad-row > .ad-col-2 { display: block; }
 }
@@ -143,11 +148,12 @@
 }
 .adnet-html iframe { display: block; border: 0; max-width: 100%; }
 
+
 /* --- Celebrate theme --------------------------------------------------------------- */
 
 /* No shared section wrapper fit a single centred card, so the slot gets its own —
-   matching .container's 920px cap used elsewhere on the page. */
-.ad-section { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.5rem; text-align: center; }
+   widened past the theme's 920px .container cap so a 3-column row (916px) fits. */
+.ad-section { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; text-align: center; }
 .ad-slot { margin: 0 auto; }
 .adnet-unit { border-color: var(--border); border-radius: var(--radius); background: var(--bg-card); box-shadow: var(--shadow); }
 .adnet-cta { color: var(--accent); }
