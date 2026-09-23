@@ -37,7 +37,7 @@ exact shape — not assumed. Note that wrangler does **not** hot-reload
 
 | path | `auto` | `force` | `drop` | `none` |
 | --- | --- | --- | --- | --- |
-| `/` | 200 | 200 | 200 | **404** |
+| `/` | 200 | 200 | 200 | **not mapped → 404 page** |
 | `/shirley90/` | **200** | 200 | 307 → `/shirley90` | 404 |
 | `/shirley90` | 307 → `/shirley90/` | 307 → `/shirley90/` | 200 | 404 |
 | `/shirley90/invitation.html` | 307 → `/shirley90/invitation` | 307 → `…/invitation/` | 307 → `…/invitation` | 200 |
@@ -46,6 +46,13 @@ exact shape — not assumed. Note that wrangler does **not** hot-reload
 Live Apache serves `/shirley90/` as 200 and 301s `/shirley90` to it. So
 `preserve` + `auto-trailing-slash` reproduces the case-study URLs exactly,
 while the flat pages lose `.html` like the other ported sites.
+
+The `none` column is about a bare `none` config: it does no path mapping, so
+every address that is not a literal file falls through to `not_found_handling`.
+Cloudflare's own table for `none` says only "depends on `not_found_handling`".
+A site can still use `none` and route its own root — `art.oze.net.au` does,
+with an explicit `/ /index.html 200` rewrite in its `dist/_redirects` — but that
+is work these sites have no reason to take on.
 
 ## What changed
 
@@ -77,14 +84,21 @@ dotfiles.
 
 ## Known, not a regression
 
-**Two Google Photos images on the invitation archive do not load.** They fail
-on the live Hostinger site in the same browser, so this predates the port —
-hotlinking from `lh3.googleusercontent.com` is refused even though the URL
-returns 200 to curl. Worth fixing separately by rehosting those two images.
-
 **House ads are blank on the preview.** `adnet` echoes CORS only for domains in
 its snapshot, and the workers.dev host is not one. Only the home page carries
 the ad tag, as on the live site.
+
+## Fixed
+
+**The two Google Photos images are now self-hosted.** Hotlinking from
+`lh3.googleusercontent.com` was refused in the browser even though the URLs
+returned 200 to curl, so both photos are rehosted as
+`shirley90/images/shirley-20.webp` and `shirley-89.webp`. Google only ever
+served a 400x400 original for these (`=s0` and `=d` both cap there), so the
+`=w800` and `=w1200` in the old markup were never getting those widths; the
+webp copies are the full 400x400 the source has. The case study, the
+invitation, their Astro twins and `event.json` all point at the local files,
+and `og:image` now uses an absolute `celebrate.oze.au` URL like the home page.
 
 ## Commands
 
