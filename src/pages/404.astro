@@ -1,0 +1,28 @@
+---
+/*
+    File: /src/pages/404.astro
+    Website: celebrate.oze.au
+    Description: Served by Cloudflare for unknown paths, via
+                 not_found_handling "404-page". Hostinger had no 404 page.
+    Author: Colin Dixon + Claude Opus 5
+*/
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const stylesheets = ['/css/celebrate.css'];
+---
+<BaseLayout stylesheets={stylesheets} bodyClass="home">
+  <Fragment slot="head">
+    <title>Page not found — celebrate.oze.au</title>
+    <meta name="description" content="That page does not exist on celebrate.oze.au." />
+    <link rel="canonical" href="https://celebrate.oze.au/404" />
+  </Fragment>
+
+  <main class="container" style="padding: 4rem 1rem; text-align: center;">
+    <h1>Page not found</h1>
+    <p>That address does not exist here.</p>
+    <p>
+      <a class="btn" href="/">Celebrate home</a>
+      <a class="btn" href="/shirley90/">Shirley&rsquo;s 90th</a>
+    </p>
+  </main>
+</BaseLayout>

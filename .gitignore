@@ -30,3 +30,10 @@ id_*
 docs/**/*.csv
 *.csv
 docs/mission.md
+
+# Astro / Cloudflare build
+node_modules/
+dist/
+.astro/
+public/
+.wrangler/
