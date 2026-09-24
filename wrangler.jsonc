@@ -26,7 +26,9 @@
   },
   "observability": { "enabled": true, "traces": { "enabled": true } },
   // Preview only. celebrate.oze.au is attached at the zone cutover.
-  "routes": [],
+  "routes": [
+    { "pattern": "celebrate.oze.au", "custom_domain": true }
+  ],
   "env": {
     "preview": {
       "name": "celebrate-oze-au-preview",
