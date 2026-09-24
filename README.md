@@ -14,6 +14,23 @@ A [Colin Dixon / OzOnLine](https://oze.au) project. Pure HTML / CSS / JS — no 
 
 ---
 
+## Cloudflare (Astro) build
+
+The repo holds two copies of the site: the repo-root `.html` pages Hostinger
+serves today, and an Astro build in `src/` that becomes the Cloudflare Worker at
+cutover. `./bump-version.sh` stamps both. The `/shirley90/` URL is preserved by
+`build.format: 'preserve'` plus `html_handling: "auto-trailing-slash"` — see
+[docs/CLOUDFLARE-PORT.md](docs/CLOUDFLARE-PORT.md) for the measurements.
+
+```bash
+npm ci
+npm run cf:dev       # build plus wrangler dev on 127.0.0.1:8794
+npm test             # parity checks against the live HTML
+npm run cf:preview   # deploy the noindex preview Worker
+```
+
+---
+
 ## Live Site
 
 - **Platform:** https://celebrate.oze.au

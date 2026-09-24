@@ -1,26 +1,27 @@
-<!--
-  File: /shirley90/index.html
-  Website: celebrate.oze.au
-  Description: Shirley Dixon 90th — archived original invitation
-  Version: 3.0.1
-  Date: 24 Aug 2026 | 5:14 PM AEST
-  Author: Colin Dixon + Claude Opus 4.8
--->
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shirley Dixon Turns 90! | celebrate.oze.au</title>
-  <meta name="description" content="Join us to celebrate Shirley Dixon's 90th birthday -- Saturday 25 July 2026 at Karbeethong Lodge, Mallacoota">
-  <meta property="og:title" content="Shirley Dixon Turns 90!">
-  <meta property="og:description" content="A very special afternoon tea -- Saturday 25 July 2026, Karbeethong Lodge, Mallacoota">
-  <meta property="og:image" content="https://celebrate.oze.au/shirley90/images/shirley-89.webp">
-  <meta name="theme-color" content="#3C3489">
-  <link rel="stylesheet" href="../css/celebrate.css?v=3.0.1">
-  <link rel="stylesheet" href="css/shirley90.css?v=3.0.1">
-</head>
-<body>
+---
+/*
+    File: /src/pages/shirley90/invitation.astro
+    Website: celebrate.oze.au
+    Description: Archived original invitation
+    Author: Colin Dixon + Claude Opus 5
+
+    Head and body content are the live page's, carried over verbatim. This
+    site's header and footer differ per page, so they stay in the page.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const stylesheets = ['../css/celebrate.css?v=3.0.1', 'css/shirley90.css?v=3.0.1'];
+const scripts = [{ src: "../js/celebrate.js?v=3.0.1" }, { src: "js/invitation.js?v=3.0.1" }, { src: "../js/confetti.js?v=3.0.1" }];
+---
+<BaseLayout lang="en" stylesheets={stylesheets} scripts={scripts}>
+  <Fragment slot="head">
+    <title>Shirley Dixon Turns 90! | celebrate.oze.au</title>
+      <meta name="description" content="Join us to celebrate Shirley Dixon's 90th birthday -- Saturday 25 July 2026 at Karbeethong Lodge, Mallacoota">
+      <meta property="og:title" content="Shirley Dixon Turns 90!">
+      <meta property="og:description" content="A very special afternoon tea -- Saturday 25 July 2026, Karbeethong Lodge, Mallacoota">
+      <meta property="og:image" content="https://celebrate.oze.au/shirley90/images/shirley-89.webp">
+      <meta name="theme-color" content="#3C3489">
+  </Fragment>
 
 <div class="archive-banner" style="position:relative;z-index:150;background:#2a2558;color:#EEEDFE;text-align:center;padding:0.85rem 1rem;font-size:0.92rem;border-bottom:1px solid rgba(175,169,236,0.25);">
   This is the <strong>original invitation</strong> kept for the celebration story.
@@ -268,16 +269,10 @@
     &nbsp;|&nbsp; A <a href="https://oze.au">Colin Dixon</a> production
   </p>
   <p style="margin-top:6px;font-size:11px;">
-    <a href="/legal/terms.html">Terms</a> &nbsp;|&nbsp;
-    <a href="/legal/privacy.html">Privacy</a> &nbsp;|&nbsp;
-    <a href="/legal/disclaimer.html">Disclaimer</a>
+    <a href="/legal/terms">Terms</a> &nbsp;|&nbsp;
+    <a href="/legal/privacy">Privacy</a> &nbsp;|&nbsp;
+    <a href="/legal/disclaimer">Disclaimer</a>
   </p>
   <p style="margin-top:5px;font-size:10px;opacity:0.45;">© 2026 Colin Dixon · All rights reserved · <span class="build-stamp">v3.0.1 · 24 Aug 2026</span> · Website by oze.au</p>
 </footer>
-
-<script src="../js/celebrate.js?v=3.0.1"></script>
-<script src="js/invitation.js?v=3.0.1"></script>
-<script src="../js/confetti.js?v=3.0.1"></script>
-
-</body>
-</html>
+</BaseLayout>

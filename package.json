@@ -1,0 +1,19 @@
+{
+  "name": "celebrate-oze-au",
+  "version": "3.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/copy-public-assets.mjs",
+    "predev": "node scripts/copy-public-assets.mjs",
+    "pretest": "npm run build",
+    "dev": "astro dev",
+    "build": "astro build",
+    "test": "node scripts/smoke-test.mjs",
+    "cf:dev": "npm run build && wrangler dev --ip 127.0.0.1 --port 8794",
+    "cf:check": "npm run build && wrangler deploy --dry-run --env preview",
+    "cf:preview": "PUBLIC_PREVIEW=1 npm run build && wrangler deploy --env preview"
+  },
+  "dependencies": { "astro": "^5.13.0" },
+  "devDependencies": { "wrangler": "^4.132.0" }
+}

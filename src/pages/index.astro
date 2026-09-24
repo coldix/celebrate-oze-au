@@ -1,0 +1,401 @@
+---
+/*
+    File: /src/pages/index.astro
+    Website: celebrate.oze.au
+    Description: Platform homepage
+    Author: Colin Dixon + Claude Opus 5
+
+    Head and body content are the live page's, carried over verbatim. This
+    site's header and footer differ per page, so they stay in the page.
+*/
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const stylesheets = ['css/celebrate.css?v=3.0.1', 'css/adnet.css?v=1.1.0'];
+const scripts = [{ src: "js/celebrate.js?v=3.0.1" }, { src: "js/confetti.js?v=3.0.1" }, { src: "https://ads.oze.net.au/t.js", async: true }];
+---
+<BaseLayout lang="en-AU" bodyClass="home" stylesheets={stylesheets} scripts={scripts}>
+  <Fragment slot="head">
+    <title>celebrate.oze.au — Digital celebrations for life's milestones</title>
+      <meta name="description" content="Personalised celebration pages for birthdays and life's big moments — invitations, messages, photos, video, music, 360° venues and lasting digital memories. By Colin Dixon / OzOnLine.">
+      <link rel="canonical" href="https://celebrate.oze.au/">
+      <meta name="theme-color" content="#0e5c38">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://celebrate.oze.au/">
+      <meta property="og:title" content="celebrate.oze.au — Digital celebrations for life's milestones">
+      <meta property="og:description" content="From invitation to lasting memory — personalised celebration pages with photos, video, music and venue stories.">
+      <meta property="og:image" content="https://celebrate.oze.au/images/wp-mouth.webp">
+      <meta property="og:locale" content="en_AU">
+      <meta name="twitter:card" content="summary_large_image">
+      <style>
+        :root {
+          --page-text:       #0e2a1e;
+          --page-text-muted: rgba(14,42,30,0.72);
+          --page-link:       #0e5c38;
+          --glass-bg:        rgba(255,255,255,0.30);
+          --glass-border:    rgba(255,255,255,0.55);
+          --glass-lite-bg:   rgba(255,255,255,0.18);
+          --glass-lite-bdr:  rgba(255,255,255,0.38);
+          --nav-bg:          rgba(255,255,255,0.22);
+          --nav-border:      rgba(255,255,255,0.42);
+          --nav-text:        rgba(14,42,30,0.88);
+          --toggle-bg:       rgba(14,42,30,0.12);
+          --toggle-border:   rgba(14,42,30,0.28);
+          --toggle-text:     #0e2a1e;
+          --scrim-top:       rgba(0,0,0,0.0);
+          --scrim-bot:       rgba(0,0,0,0.12);
+          --footer-bg:       rgba(255,255,255,0.20);
+          --footer-text:     rgba(14,42,30,0.50);
+          --footer-link:     rgba(14,42,30,0.70);
+          --version-text:    rgba(14,42,30,0.32);
+          --btn-primary-bg:  #0e5c38;
+          --btn-primary-fg:  #ffffff;
+        }
+        [data-theme="dark"] {
+          --page-text:       #ffffff;
+          --page-text-muted: rgba(255,255,255,0.75);
+          --page-link:       rgba(255,220,140,0.95);
+          --glass-bg:        rgba(10,8,18,0.28);
+          --glass-border:    rgba(255,255,255,0.14);
+          --glass-lite-bg:   rgba(10,8,18,0.18);
+          --glass-lite-bdr:  rgba(255,255,255,0.10);
+          --nav-bg:          rgba(10,8,18,0.20);
+          --nav-border:      rgba(255,255,255,0.12);
+          --nav-text:        rgba(255,255,255,0.88);
+          --toggle-bg:       rgba(255,255,255,0.16);
+          --toggle-border:   rgba(255,255,255,0.38);
+          --toggle-text:     #ffffff;
+          --scrim-top:       rgba(10,8,18,0.18);
+          --scrim-bot:       rgba(10,8,18,0.48);
+          --footer-bg:       rgba(10,8,18,0.40);
+          --footer-text:     rgba(255,255,255,0.38);
+          --footer-link:     rgba(255,255,255,0.56);
+          --version-text:    rgba(255,255,255,0.22);
+          --btn-primary-bg:  rgba(255,255,255,0.92);
+          --btn-primary-fg:  #1a1650;
+        }
+
+        html, body { height: 100%; margin: 0; }
+        body.home {
+          font-family: var(--font-body);
+          color: var(--page-text);
+          line-height: 1.7;
+          background: #081810;
+        }
+        .bg-main {
+          position: fixed; inset: 0; z-index: 0;
+          background: url('images/wp-mouth.webp') center center / cover no-repeat;
+          transition: opacity 0.5s ease;
+        }
+        [data-theme="dark"] .bg-main {
+          background-image: url('images/wp-betka-sunrise.webp');
+        }
+        .bg-scrim {
+          position: fixed; inset: 0; z-index: 0;
+          background: linear-gradient(180deg, var(--scrim-top) 0%, var(--scrim-bot) 100%);
+        }
+        .site-nav.home-nav,
+        .hero, .page-body, .site-footer.home-footer { position: relative; z-index: 1; }
+
+        .site-nav.home-nav {
+          position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+          background: var(--nav-bg);
+          backdrop-filter: blur(20px) saturate(180%);
+          -webkit-backdrop-filter: blur(20px) saturate(180%);
+          border-bottom: 1px solid var(--nav-border);
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0 1.25rem; height: 62px;
+        }
+        .home-nav .nav-brand img { height: 34px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.2)); }
+        .home-nav .nav-links a {
+          color: var(--nav-text); text-decoration: none;
+          font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+        }
+        .home-nav .nav-links a:hover { color: var(--page-text); }
+        .home-nav .theme-toggle {
+          background: var(--toggle-bg); border: 1px solid var(--toggle-border);
+          color: var(--toggle-text); padding: 5px 14px; border-radius: 20px;
+          font-size: 12px; cursor: pointer;
+        }
+        .home-nav .nav-toggle {
+          display: none;
+          background: var(--toggle-bg); border: 1px solid var(--toggle-border);
+          color: var(--toggle-text); border-radius: 8px; padding: 0.35rem 0.7rem;
+          font-size: 12px; font-weight: 700; cursor: pointer;
+        }
+
+        .glass {
+          background: var(--glass-bg);
+          backdrop-filter: blur(20px) saturate(180%);
+          -webkit-backdrop-filter: blur(20px) saturate(180%);
+          border: 1px solid var(--glass-border);
+          border-radius: 18px;
+        }
+        .glass-lite {
+          background: var(--glass-lite-bg);
+          backdrop-filter: blur(16px) saturate(160%);
+          -webkit-backdrop-filter: blur(16px) saturate(160%);
+          border: 1px solid var(--glass-lite-bdr);
+          border-radius: 14px;
+        }
+
+        .hero {
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          text-align: center; padding: 110px 1.5rem 3.5rem;
+        }
+        .hero-logo {
+          width: min(280px, 68vw); margin-bottom: 1.75rem;
+          filter: drop-shadow(0 4px 20px rgba(0,0,0,0.28));
+        }
+        .hero-glass {
+          max-width: 620px; padding: 2.1rem 2.25rem 1.9rem;
+          background: var(--glass-lite-bg) !important;
+          border-color: var(--glass-lite-bdr) !important;
+        }
+        .hero-tagline {
+          font-family: var(--font-display); font-style: italic;
+          font-size: clamp(1.35rem, 4vw, 1.7rem); color: var(--page-text); margin-bottom: 0.75rem;
+        }
+        .hero-sub {
+          font-size: 15px; color: var(--page-text-muted);
+          max-width: 460px; margin: 0 auto 1.6rem; line-height: 1.65;
+        }
+        .hero-buttons { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn-primary {
+          display: inline-block;
+          background: var(--btn-primary-bg); color: var(--btn-primary-fg);
+          font-family: var(--font-display); font-size: 16px; font-weight: 700;
+          padding: 12px 30px; border-radius: 50px; text-decoration: none;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+        .btn-ghost {
+          display: inline-block;
+          background: var(--glass-lite-bg); color: var(--page-text);
+          font-family: var(--font-display); font-size: 16px;
+          padding: 12px 30px; border-radius: 50px; text-decoration: none;
+          border: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+          transition: background 0.2s, transform 0.2s;
+        }
+        .btn-ghost:hover { background: var(--glass-bg); transform: translateY(-2px); }
+
+        .features-section, .case-section, .contact-section { padding: 3.5rem 1.5rem; }
+        .features-inner, .case-inner { max-width: 960px; margin: 0 auto; }
+        .section-heading {
+          font-family: var(--font-display); font-size: clamp(1.4rem, 4vw, 1.9rem);
+          font-weight: 400; color: var(--page-text); text-align: center; margin-bottom: 0.4rem;
+        }
+        .section-sub {
+          text-align: center; color: var(--page-text-muted); font-size: 14px; margin-bottom: 2rem;
+        }
+        .feature-grid {
+          display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.9rem;
+        }
+        .feature-card { padding: 1.35rem 1.15rem 1.15rem; text-align: center; }
+        .feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .feature-title {
+          font-family: var(--font-display); font-size: 1rem; color: var(--page-text); margin-bottom: 0.3rem;
+        }
+        .feature-desc { font-size: 0.86rem; color: var(--page-text-muted); line-height: 1.6; }
+
+        .case-card { max-width: 640px; margin: 0 auto; padding: 2.1rem 1.75rem; text-align: center; }
+        .case-card h2 {
+          font-family: var(--font-display); font-size: clamp(1.35rem, 4vw, 1.7rem);
+          font-weight: 400; color: var(--page-text); margin-bottom: 0.65rem;
+        }
+        .case-card p { color: var(--page-text-muted); margin-bottom: 1.35rem; font-size: 0.98rem; }
+        .case-meta {
+          display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+          margin-bottom: 1.35rem;
+        }
+        .case-meta span {
+          font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em;
+          text-transform: uppercase; color: var(--page-text);
+          background: var(--glass-lite-bg); border: 1px solid var(--glass-border);
+          border-radius: 999px; padding: 0.3rem 0.7rem;
+        }
+
+        .contact-card { max-width: 520px; margin: 0 auto; padding: 2rem 1.75rem; text-align: center; }
+        .contact-card h2 {
+          font-family: var(--font-display); font-size: clamp(1.25rem, 4vw, 1.55rem);
+          font-weight: 400; color: var(--page-text); margin-bottom: 0.65rem;
+        }
+        .contact-card p { color: var(--page-text-muted); font-size: 0.95rem; margin-bottom: 0.4rem; }
+        .contact-card a { color: var(--page-link); text-decoration: none; }
+        .contact-card a:hover { text-decoration: underline; }
+        .contact-card .btn-primary { margin-top: 1.25rem; }
+
+        .site-footer.home-footer {
+          background: var(--footer-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+          border-top: 1px solid var(--glass-border); text-align: center;
+          padding: 1.75rem 1rem; font-size: 12px; color: var(--footer-text);
+        }
+        .site-footer.home-footer a { color: var(--footer-link); text-decoration: none; }
+        .site-footer.home-footer a:hover { color: var(--page-text); }
+        .version-line { margin-top: 6px; font-size: 11px; color: var(--version-text); }
+
+        @media (max-width: 720px) {
+          .home-nav .nav-toggle { display: inline-flex; }
+          .home-nav .nav-links {
+            display: none; position: absolute; top: 62px; left: 0; right: 0;
+            flex-direction: column; align-items: stretch; gap: 0.15rem;
+            background: rgba(8,24,16,0.92); padding: 0.75rem 1rem 1rem;
+            border-bottom: 1px solid var(--nav-border);
+          }
+          [data-theme="light"] .home-nav .nav-links {
+            background: rgba(255,255,255,0.94);
+          }
+          .home-nav.is-open .nav-links { display: flex; }
+          .home-nav .nav-links a, .home-nav .theme-toggle {
+            display: block; width: 100%; text-align: left; padding: 0.65rem 0.35rem;
+          }
+          .hero-glass { padding: 1.6rem 1.2rem; }
+        }
+      </style>
+  </Fragment>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="bg-main" aria-hidden="true"></div>
+<div class="bg-scrim" aria-hidden="true"></div>
+
+<nav class="site-nav home-nav" aria-label="Primary">
+  <a href="/" class="nav-brand">
+    <img src="images/oze-logo.webp" alt="celebrate.oze.au">
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="home-nav">Menu</button>
+  <ul class="nav-links" id="home-nav">
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#case-study">Case study</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleTheme()">☾ Dark</button></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <img src="images/oze-logo.webp" alt="" class="hero-logo" width="280" height="auto">
+  <div class="hero-glass glass">
+    <h1 class="hero-tagline">From invitation to lasting memory</h1>
+    <p class="hero-sub">
+      Personalised celebration pages for birthdays and life’s big moments —
+      beautiful enough for family, useful enough for the whole event life cycle.
+    </p>
+    <div class="hero-buttons">
+      <a href="/shirley90/" class="btn-primary">See Shirley’s 90th</a>
+      <a href="mailto:col@dixon.net.au" class="btn-ghost">Get your own page</a>
+    </div>
+  </div>
+</section>
+
+<main id="main" class="page-body">
+
+  <section class="features-section" id="capabilities">
+    <div class="features-inner">
+      <h2 class="section-heading">What Celebrate can hold</h2>
+      <p class="section-sub">One elegant page for the lead-up, the day, and the years after</p>
+      <div class="feature-grid">
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">✉️</div>
+          <div class="feature-title">Invitations &amp; RSVP</div>
+          <div class="feature-desc">A warm, shareable home for guest details, plans and responses before the day.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">💬</div>
+          <div class="feature-title">Messages &amp; wishes</div>
+          <div class="feature-desc">Birthday messages collected with permission and presented as a keepsake wall.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">📸</div>
+          <div class="feature-title">Photography</div>
+          <div class="feature-desc">Then-and-now portraits, event galleries and lifetime albums, curated for the web.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">🎬</div>
+          <div class="feature-title">Video tributes</div>
+          <div class="feature-desc">Embedded birthday videos that load on demand so the page stays fast on mobile.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">🎵</div>
+          <div class="feature-title">Personalised music</div>
+          <div class="feature-desc">Original milestone songs — including examples from Celebrate and music.oze.au.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">🧭</div>
+          <div class="feature-title">360° venues</div>
+          <div class="feature-desc">Interactive place experiences that show why a venue worked for the gathering.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">🏡</div>
+          <div class="feature-title">Venue showcase</div>
+          <div class="feature-desc">A real-world case study that points guests to the venue’s own booking contacts.</div>
+        </div>
+        <div class="feature-card glass-lite">
+          <div class="feature-icon">💎</div>
+          <div class="feature-title">Lasting digital memory</div>
+          <div class="feature-desc">When the day is over, the page becomes a permanent story — not a dead countdown.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section" id="case-study">
+    <div class="case-inner">
+      <div class="case-card glass">
+        <h2>Featured case study: Shirley’s 90th</h2>
+        <p>
+          Shirley Dixon’s 90th birthday was celebrated on 25 July 2026 at Karbeethong Lodge
+          in Mallacoota, with about 70 family members and friends. The page now holds the
+          completed celebration — story, media, messages and venue — as a living example of Celebrate.
+        </p>
+        <div class="case-meta">
+          <span>25 July 2026</span>
+          <span>Mallacoota</span>
+          <span>Karbeethong Lodge</span>
+          <span>~70 guests</span>
+        </div>
+        <a href="/shirley90/" class="btn-primary">Open the celebration</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ad-section" aria-label="Sponsored">
+    <div class="ad-row-wrap">
+      <div class="ad-row">
+        <div class="ad-slot ad-300x250" data-ad-zone="in-content"></div>
+        <div class="ad-slot ad-300x250 ad-col-2" data-ad-zone="in-content-2"></div>
+        <div class="ad-slot ad-300x250 ad-col-3" data-ad-zone="in-content-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-card glass">
+      <h2>Want a celebration page?</h2>
+      <p>
+        celebrate.oze.au is a project by <a href="https://dixon.au">Colin Dixon</a> in Mallacoota.
+        Pages for birthdays, anniversaries, retirements, farewells and other milestones.
+      </p>
+      <p>Tell Colin about the occasion — he’ll shape a page that fits the people, not a template.</p>
+      <a href="mailto:col@dixon.net.au" class="btn-primary">Contact Colin</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer home-footer">
+  <p>celebrate.oze.au · A <a href="https://oze.au">Colin Dixon / OzOnLine</a> production</p>
+  <p style="margin-top:5px;">
+    <a href="https://dixon.au">dixon.au</a> ·
+    <a href="https://oze.au">oze.au</a> ·
+    <a href="https://dronecraft.au">dronecraft.au</a> ·
+    <a href="https://music.oze.au">music.oze.au</a>
+  </p>
+  <p style="margin-top:8px;">
+    <a href="/legal/terms">Terms of Service</a> ·
+    <a href="/legal/privacy">Privacy Policy</a> ·
+    <a href="/legal/disclaimer">Disclaimer</a>
+  </p>
+  <p class="version-line">© 2026 Colin Dixon · All rights reserved · <span class="build-stamp">v3.0.1 · 24 Aug 2026</span> · Website by oze.au</p>
+</footer>
+</BaseLayout>

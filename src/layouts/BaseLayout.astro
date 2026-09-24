@@ -1,0 +1,44 @@
+---
+/*
+    File: /src/layouts/BaseLayout.astro
+    Website: celebrate.oze.au
+    Description: Document shell only. This site's pages each carry their own
+                 header and footer (four different footers, and only the case
+                 study has a header), so the layout owns the html/head/body
+                 wrapper, the stylesheet and script tags, and nothing else.
+    Author: Colin Dixon + Claude Opus 5
+*/
+interface Props {
+  /* The live pages use both en-AU and en. Carried over per page rather than
+     normalised, so the port changes nothing a crawler can see. */
+  lang?: string;
+  bodyClass?: string;
+  /* Stylesheet and script URLs exactly as the live page wrote them, including
+     the ../ relative paths: those resolve identically from /legal/terms,
+     /shirley90/ and /shirley90/invitation. */
+  stylesheets: string[];
+  scripts?: { src: string; defer?: boolean; async?: boolean }[];
+}
+
+const { lang = 'en-AU', bodyClass, stylesheets, scripts = [] } = Astro.props;
+
+// The workers.dev preview is a public copy of a live site, and this one carries
+// a real person's birthday page. Keep it out of the index. cf:preview sets it.
+const isPreview = import.meta.env.PUBLIC_PREVIEW === '1';
+---
+<!DOCTYPE html>
+<html lang={lang} data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {isPreview && <meta name="robots" content="noindex, nofollow" />}
+    {stylesheets.map((href) => <link rel="stylesheet" href={href} />)}
+
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <slot />
+
+    {scripts.map((s) => <script is:inline src={s.src} defer={s.defer} async={s.async}></script>)}
+  </body>
+</html>

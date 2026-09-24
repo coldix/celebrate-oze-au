@@ -1,63 +1,65 @@
-<!--
-  File: /shirley90/index.html
-  Website: celebrate.oze.au
-  Description: Shirley Dixon 90th — post-event celebration showcase
-  Version: 3.0.1
-  Date: 24 Aug 2026 | 5:14 PM AEST
-  Author: Colin Dixon + Claude Opus 4.8
--->
-<!DOCTYPE html>
-<html lang="en-AU" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shirley Dixon's 90th Birthday | celebrate.oze.au</title>
-  <meta name="description" content="Shirley Dixon's 90th birthday celebration at Karbeethong Lodge, Mallacoota — 25 July 2026. Photos, song, messages and a lasting digital memory from celebrate.oze.au.">
-  <link rel="canonical" href="https://celebrate.oze.au/shirley90/">
-  <meta name="theme-color" content="#3C3489">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://celebrate.oze.au/shirley90/">
-  <meta property="og:title" content="Shirley Dixon's 90th Birthday">
-  <meta property="og:description" content="Celebrated 25 July 2026 at Karbeethong Lodge, Mallacoota — about 70 family and friends. A lasting digital celebration from celebrate.oze.au.">
-  <meta property="og:image" content="https://celebrate.oze.au/shirley90/images/shirley-89.webp">
-  <meta property="og:locale" content="en_AU">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shirley Dixon's 90th Birthday">
-  <meta name="twitter:description" content="Celebrated 25 July 2026 at Karbeethong Lodge, Mallacoota.">
-  <link rel="stylesheet" href="../css/celebrate.css?v=3.0.1">
-  <link rel="stylesheet" href="css/shirley90.css?v=3.0.1">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Shirley Dixon's 90th Birthday",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "startDate": "2026-07-25",
-    "endDate": "2026-07-25",
-    "description": "Shirley Dixon's 90th birthday celebration at Karbeethong Lodge, Mallacoota, with about 70 family members and friends.",
-    "image": "https://celebrate.oze.au/shirley90/images/shirley-89.webp",
-    "location": {
-      "@type": "Place",
-      "name": "Karbeethong Lodge",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "16 Schnapper Point Drive",
-        "addressLocality": "Mallacoota",
-        "addressRegion": "VIC",
-        "postalCode": "3892",
-        "addressCountry": "AU"
+---
+/*
+    File: /src/pages/shirley90/index.astro
+    Website: celebrate.oze.au
+    Description: Shirley Dixon's 90th, post-event showcase
+    Author: Colin Dixon + Claude Opus 5
+
+    Head and body content are the live page's, carried over verbatim. This
+    site's header and footer differ per page, so they stay in the page.
+*/
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const stylesheets = ['../css/celebrate.css?v=3.0.1', 'css/shirley90.css?v=3.0.1'];
+const scripts = [{ src: "../js/celebrate.js?v=3.0.1" }, { src: "js/shirley90.js?v=3.0.1" }, { src: "../js/confetti.js?v=3.0.1" }];
+---
+<BaseLayout lang="en-AU" stylesheets={stylesheets} scripts={scripts}>
+  <Fragment slot="head">
+    <title>Shirley Dixon's 90th Birthday | celebrate.oze.au</title>
+      <meta name="description" content="Shirley Dixon's 90th birthday celebration at Karbeethong Lodge, Mallacoota — 25 July 2026. Photos, song, messages and a lasting digital memory from celebrate.oze.au.">
+      <link rel="canonical" href="https://celebrate.oze.au/shirley90/">
+      <meta name="theme-color" content="#3C3489">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://celebrate.oze.au/shirley90/">
+      <meta property="og:title" content="Shirley Dixon's 90th Birthday">
+      <meta property="og:description" content="Celebrated 25 July 2026 at Karbeethong Lodge, Mallacoota — about 70 family and friends. A lasting digital celebration from celebrate.oze.au.">
+      <meta property="og:image" content="https://celebrate.oze.au/shirley90/images/shirley-89.webp">
+      <meta property="og:locale" content="en_AU">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Shirley Dixon's 90th Birthday">
+      <meta name="twitter:description" content="Celebrated 25 July 2026 at Karbeethong Lodge, Mallacoota.">
+      <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Shirley Dixon's 90th Birthday",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "startDate": "2026-07-25",
+        "endDate": "2026-07-25",
+        "description": "Shirley Dixon's 90th birthday celebration at Karbeethong Lodge, Mallacoota, with about 70 family members and friends.",
+        "image": "https://celebrate.oze.au/shirley90/images/shirley-89.webp",
+        "location": {
+          "@type": "Place",
+          "name": "Karbeethong Lodge",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "16 Schnapper Point Drive",
+            "addressLocality": "Mallacoota",
+            "addressRegion": "VIC",
+            "postalCode": "3892",
+            "addressCountry": "AU"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "Colin Dixon",
+          "url": "https://celebrate.oze.au/"
+        }
       }
-    },
-    "organizer": {
-      "@type": "Person",
-      "name": "Colin Dixon",
-      "url": "https://celebrate.oze.au/"
-    }
-  }
-  </script>
-</head>
-<body>
+      </script>
+  </Fragment>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="site-nav" aria-label="Primary">
@@ -255,7 +257,7 @@
         </div>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://celebrate.oze.au/">About Celebrate</a>
-          <a class="btn btn-secondary" href="invitation.html">Original invitation</a>
+          <a class="btn btn-secondary" href="invitation">Original invitation</a>
         </div>
       </div>
     </div>
@@ -276,16 +278,11 @@
     · A <a href="https://oze.au">Colin Dixon / OzOnLine</a> production
   </p>
   <p>
-    <a href="invitation.html">Original invitation</a>
-    · <a href="/legal/terms.html">Terms</a>
-    · <a href="/legal/privacy.html">Privacy</a>
-    · <a href="/legal/disclaimer.html">Disclaimer</a>
+    <a href="invitation">Original invitation</a>
+    · <a href="/legal/terms">Terms</a>
+    · <a href="/legal/privacy">Privacy</a>
+    · <a href="/legal/disclaimer">Disclaimer</a>
   </p>
   <p class="version-line">© 2026 Colin Dixon · All rights reserved · <span class="build-stamp">v3.0.1 · 24 Aug 2026</span> · Website by oze.au</p>
 </footer>
-
-<script src="../js/celebrate.js?v=3.0.1"></script>
-<script src="js/shirley90.js?v=3.0.1"></script>
-<script src="../js/confetti.js?v=3.0.1"></script>
-</body>
-</html>
+</BaseLayout>
