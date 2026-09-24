@@ -8,6 +8,19 @@
 -->
 # celebrate.oze.au
 
+> **Deploying changed on 24 September 2026.** This site serves from a Cloudflare
+> Worker and its Hostinger workflow is disabled, so pushing to `main` publishes
+> nothing. Deploy with:
+>
+> ```sh
+> npm test && npx wrangler deploy
+> ```
+>
+> Run `npx wrangler whoami` first: four Cloudflare accounts are reachable from
+> this machine. See `docs/CLOUDFLARE-PORT.md`, and the oze.au repo's
+> `docs/CUTOVER-CHECKLIST.md` and `docs/PLAYBOOK.md` §8.
+
+
 **Personalised celebration pages for birthdays and life’s milestones — from invitation to lasting memory.**
 
 A [Colin Dixon / OzOnLine](https://oze.au) project. Pure HTML / CSS / JS — no framework, no build step.
