@@ -5,7 +5,11 @@
   // and Bridge. Run `npx wrangler whoami` first: four accounts are reachable.
   "account_id": "1b494ec3de3d84b846e3100f5bbf561d",
   "compatibility_date": "2026-09-16",
-  "workers_dev": true,
+  // No workers.dev URL for the production Worker. Its pages are indexable, as
+  // they must be once the custom domain is attached, so leaving a second
+  // public hostname serving them would compete with the real site. Verify
+  // changes on the -preview Worker, which is noindex.
+  "workers_dev": false,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
