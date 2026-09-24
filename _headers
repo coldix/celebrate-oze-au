@@ -1,0 +1,41 @@
+# Headers for the Cloudflare Worker build. The old .htaccess cache policy
+# does not apply on Workers, so it is restated here: HTML always revalidates,
+# and assets that carry a ?v= cache-buster are immutable for a year.
+# Security headers match the oze.au hub's house standard.
+# Deliberately no Content-Security-Policy: these pages embed third-party
+# checkout and media, and a CSP needs testing per site before it ships.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: no-store, must-revalidate
+
+/css/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/shirley90/css/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/shirley90/js/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/shirley90/images/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/shirley90/audio/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
