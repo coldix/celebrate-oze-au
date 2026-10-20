@@ -106,7 +106,7 @@ for (const page of PAGES) {
 const home = readFileSync('dist/index.html', 'utf8');
 check('home links to /shirley90/ with its slash', /href="[^"]*shirley90\/"/.test(home));
 
-check('home loads the house ad tag', home.includes('https://ads.oze.net.au/t.js'));
+check('home loads the house ad tag', home.includes('https://ads.oze.au/t.js'));
 check('adnet.css only on the home page', home.includes('css/adnet.css') && !shirley.includes('adnet.css'));
 
 console.log(failures ? `\n${failures} check(s) failed.` : '\nAll checks passed.');
