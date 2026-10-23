@@ -1,0 +1,106 @@
+{
+  "kit": "1.0.0",
+  "updated": "23/10/2026",
+  "hub": {
+    "name": "OZE",
+    "url": "https://oze.au/",
+    "label": "oze.au"
+  },
+  "all": {
+    "label": "All projects at oze.au",
+    "url": "https://oze.au/#projects"
+  },
+  "sites": [
+    {
+      "name": "OzeArt",
+      "host": "art.oze.au",
+      "url": "https://art.oze.au/",
+      "category": "creative",
+      "description": "Wilderness Coast photography, panoramic prints and framed art for your walls."
+    },
+    {
+      "name": "OZE Surveys",
+      "host": "survey.oze.au",
+      "url": "https://survey.oze.au/",
+      "category": "tools",
+      "description": "Community consultations, personality and reasoning assessments, polls and website discovery questionnaires."
+    },
+    {
+      "name": "OZE Ads",
+      "host": "ads.oze.au",
+      "url": "https://ads.oze.au/",
+      "category": "websites",
+      "description": "A self-hosted house ad network for OZE sites. No cookies, no cross-site tracking."
+    },
+    {
+      "name": "Calendar & Almanac",
+      "host": "calendar.oze.au",
+      "url": "https://calendar.oze.au/",
+      "category": "tools",
+      "description": "Australian calendars, custom wall planners, local events and the rhythms of the sun, moon and coast."
+    },
+    {
+      "name": "OZE Apps",
+      "host": "apps.oze.au",
+      "url": "https://apps.oze.au/",
+      "category": "tools",
+      "description": "Practical tools in one place, from Puzzle Studio to Exploding Dots."
+    },
+    {
+      "name": "Bridge+More",
+      "host": "bridge.oze.au",
+      "url": "https://bridge.oze.au/",
+      "category": "community",
+      "description": "Discover Bridge+More through volunteer demonstrations and practical guides."
+    },
+    {
+      "name": "Celebrate",
+      "host": "celebrate.oze.au",
+      "url": "https://celebrate.oze.au/",
+      "category": "creative",
+      "description": "Personal celebration pages, from the first invitation to a lasting memory."
+    },
+    {
+      "name": "OZE Bookings",
+      "host": "bookings.oze.au",
+      "url": "https://bookings.oze.au/",
+      "category": "websites",
+      "description": "Direct bookings for motels, resorts, holiday flats and cabins. See it live at Gabo Island Resort Lodge."
+    },
+    {
+      "name": "OZE Websites & Care",
+      "host": "domains.oze.au",
+      "url": "https://domains.oze.au/websites.html",
+      "category": "websites",
+      "description": "Websites, domains, email and ongoing care for independent businesses."
+    },
+    {
+      "name": "Calibr",
+      "host": "calibr.oze.au",
+      "url": "https://calibr.oze.au/",
+      "category": "labs",
+      "description": "Precision health tracking designed with mature adults in mind."
+    },
+    {
+      "name": "House Sitting App",
+      "host": "hsa.oze.au",
+      "url": "https://hsa.oze.au/",
+      "category": "tools",
+      "description": "The companion app for finding house-sitting connections."
+    },
+    {
+      "name": "Exploding Dots",
+      "host": "dots.oze.au",
+      "url": "https://dots.oze.au/",
+      "category": "ideas",
+      "description": "An interactive way to explore numbers, place value and mathematical ideas."
+    },
+    {
+      "name": "OZE Music",
+      "host": "music.oze.au",
+      "url": "https://music.oze.au/",
+      "category": "creative",
+      "description": "Music projects, creative experiments and collaborations."
+    }
+  ]
+}

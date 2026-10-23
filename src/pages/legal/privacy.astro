@@ -9,6 +9,7 @@
     site's header and footer differ per page, so they stay in the page.
 */
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import OzeFamily from '../../components/OzeFamily.astro';
 
 const stylesheets = ['../css/celebrate.css'];
 const scripts = [{ src: "../js/celebrate.js" }];
@@ -260,6 +261,7 @@ const scripts = [{ src: "../js/celebrate.js" }];
     <a href="/legal/privacy">Privacy</a> &nbsp;|&nbsp;
     <a href="/legal/disclaimer">Disclaimer</a>
   </p>
-  <p class="version-line">© 2026 Colin Dixon · All rights reserved · <span class="build-stamp">v3.0.1 · 24 Aug 2026</span> · Website by oze.au</p>
+  <OzeFamily />
+  <p class="version-line">© 2026 Colin Dixon · All rights reserved · <span class="build-stamp">v3.1.0 · 23/10/2026</span> · Website by oze.au</p>
 </footer>
 </BaseLayout>

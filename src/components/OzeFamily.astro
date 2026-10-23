@@ -1,0 +1,31 @@
+---
+/*
+  File: src/components/OzeFamily.astro
+  Website: celebrate.oze.au
+  Description: The OZE family strip, rendered from the shared kit in
+               src/data/oze-family.json (synced from https://oze.au/family/).
+               Markup follows oze.au docs/FAMILY-KIT.md. Do not edit the list
+               here: change data/projects.json in coldix/oze.au instead.
+  Version: 3.1.0
+  Date: 23/10/2026 | 3:45 PM AEDT
+  Author: Colin Dixon + Claude
+*/
+import family from '../data/oze-family.json';
+import '../styles/oze-family.css';
+const here = 'celebrate.oze.au';
+---
+<nav class="oze-family" aria-label="The OZE family">
+  <div class="oze-family__head">
+    <p class="oze-family__title"><a href={family.hub.url}>Part of the <b>OZE</b> family</a></p>
+    <a class="oze-family__all" href={family.all.url}>{family.all.label}</a>
+  </div>
+  <ul class="oze-family__list">
+    {family.sites.map((s) => (
+      <li>
+        {s.host === here
+          ? <span aria-current="page">{s.name} <small>{s.host}</small></span>
+          : <a href={s.url} title={s.description}>{s.name} <small>{s.host}</small></a>}
+      </li>
+    ))}
+  </ul>
+</nav>
