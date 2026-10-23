@@ -1,0 +1,47 @@
+/*
+  File: /family/family.css
+  Website: oze.au (served at https://oze.au/family/family.css)
+  Description: OZE family kit strip. Each site copies this in at build time and
+               themes it with the --oze-family-* variables, so the strip reads as
+               part of that site while the links and wording stay the same everywhere.
+  Version: 1.0.0
+  Date: 23/10/2026 | 2:30 PM AEDT
+  Author: Colin Dixon + Claude
+*/
+.oze-family {
+  --_ink: var(--oze-family-ink, currentColor);
+  --_muted: var(--oze-family-muted, currentColor);
+  --_line: var(--oze-family-line, rgba(127, 127, 127, .35));
+  --_accent: var(--oze-family-accent, #dff784);
+  --_chip: var(--oze-family-chip, rgba(127, 127, 127, .12));
+  --_radius: var(--oze-family-radius, 999px);
+  color: var(--_ink);
+  border-top: 1px solid var(--_line);
+  border-bottom: 1px solid var(--_line);
+  padding: 18px 0;
+  margin: 24px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+.oze-family__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 18px; margin-bottom: 12px; }
+.oze-family__title { margin: 0; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.oze-family__title a { color: inherit; text-decoration: none; }
+.oze-family__title b { color: var(--_accent); }
+.oze-family__all { color: var(--_muted); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.oze-family__list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.oze-family__list a,
+.oze-family__list span {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 6px 12px; border-radius: var(--_radius);
+  background: var(--_chip); color: var(--_ink);
+  text-decoration: none; border: 1px solid transparent;
+  transition: border-color .2s, transform .2s;
+}
+.oze-family__list a:hover, .oze-family__list a:focus-visible { border-color: var(--_accent); transform: translateY(-1px); }
+.oze-family__list small { color: var(--_muted); font-size: 11px; }
+.oze-family__list [aria-current="page"] { border-color: var(--_accent); }
+.oze-family__stamp { margin: 12px 0 0; color: var(--_muted); font-size: 11px; }
+/* On a phone the names alone pair up two to a row; the hosts are in each link's address. */
+@media (max-width: 520px) { .oze-family__list small { display: none; } .oze-family__list a, .oze-family__list span { padding: 6px 11px; } }
+@media (prefers-reduced-motion: reduce) { .oze-family__list a { transition: none; } }

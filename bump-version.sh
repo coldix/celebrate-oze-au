@@ -34,7 +34,7 @@ ASTRO=$(find src -name '*.astro' 2>/dev/null)
 ALL="$HTML $JS $CSS $ASTRO README.md deploy.sh"
 
 DATE_FULL="$(TZ='Australia/Sydney' date '+%-d %b %Y | %-I:%M %p AEST')"
-DATE_ONLY="$(TZ='Australia/Sydney' date '+%-d %b %Y')"
+DATE_ONLY="$(TZ='Australia/Melbourne' date '+%d/%m/%Y')"   # OZE family stamp format
 
 sed -i '' "s/?v=${OLD_RE}/?v=${NEW}/g" $HTML
 sed -i '' "s/const VERSION = 'v${OLD_RE}'/const VERSION = 'v${NEW}'/" js/celebrate.js
@@ -44,7 +44,7 @@ sed -i '' "s/SITE_VERSION = '${OLD_RE}'/SITE_VERSION = '${NEW}'/" src/site.ts
 sed -i '' "s/\"version\": \"${OLD_RE}\"/\"version\": \"${NEW}\"/" package.json
 sed -i '' -E "s/Version: [0-9]+\.[0-9]+\.[0-9]+/Version: ${NEW}/g" $ALL
 sed -i '' -E "s/(Date: ).*/\1${DATE_FULL}/g" $ALL
-sed -i '' -E "s#(<span class=\"build-stamp\">)[^<]*(</span>)#\1v${NEW} · ${DATE_ONLY}\2#g" $HTML
+sed -i '' -E "s#(<span class=\"build-stamp\">)[^<]*(</span>)#\1v${NEW} · ${DATE_ONLY}\2#g" $HTML $ASTRO
 
 echo "Done. Remaining stale v$OLD references (should be none):"
 grep -rn "v\{0,1\}${OLD_RE}\b" $ALL 2>/dev/null && echo "  ^ check above" >&2 || echo "  none — all at v$NEW"

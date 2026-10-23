@@ -2,8 +2,8 @@
   File: /css/celebrate.css
   Website: celebrate.oze.au
   Description: Shared styles — themes, layout, components
-  Version: 3.0.1
-  Date: 24 Aug 2026 | 5:14 PM AEST
+  Version: 3.1.0
+  Date: 23/10/2026 | 3:45 PM AEDT
   Author: Colin Dixon + Claude Opus 4.8
 */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
@@ -338,6 +338,10 @@ a { color: var(--brand); }
 .site-footer a:hover { color: #fff; }
 .site-footer p + p { margin-top: 0.45rem; }
 .build-stamp, .version-line { opacity: 0.7; font-size: 0.78rem; }
+/* OZE family kit strip (src/styles/oze-family.css), themed with this site's tokens. */
+.site-footer .oze-family { --oze-family-ink: var(--text); --oze-family-muted: var(--text-muted); --oze-family-line: var(--border); --oze-family-accent: var(--accent); --oze-family-chip: color-mix(in srgb, var(--bg-card) 70%, transparent); max-width: 900px; margin: 1.1rem auto 0.9rem; }
+.site-footer .oze-family a { color: var(--text); }
+.site-footer .oze-family a:hover { color: var(--brand-mid); }
 
 /* ── Archive banner ── */
 .archive-banner {
