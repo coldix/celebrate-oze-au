@@ -19,7 +19,7 @@
     //   force: /legal/terms.html 307 -> /legal/terms/           <- unlike the other sites
     //   none:  no path mapping at all, so / falls through to
     //          not_found_handling (the 404 page). A site on "none" routes its
-    //          own root with a _redirects rewrite, as art.oze.net.au does.
+    //          own root with a _redirects rewrite, as art.oze.au does.
     // Live Apache does /shirley90/ 200 and /shirley90 301 -> /shirley90/, so
     // auto reproduces the case-study URLs exactly.
     "html_handling": "auto-trailing-slash"
